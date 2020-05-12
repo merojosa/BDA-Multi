@@ -1,3 +1,14 @@
+DROP TABLE IF EXISTS DimProduct;
+DROP TABLE IF EXISTS DimEmployee;
+DROP TABLE IF EXISTS DimStoreLocation;
+DROP TABLE IF EXISTS DimCustomerLocation;
+DROP TABLE IF EXISTS DimTerritoryCountry;
+DROP TABLE IF EXISTS DimOrderDate;
+DROP TABLE IF EXISTS DimSubCategory;
+DROP TABLE IF EXISTS DimCategory;
+DROP TABLE IF EXISTS DimDueDate;
+DROP TABLE IF EXISTS DimShipDate;
+
 CREATE TABLE DimEmployee
 (
 	EmployeeKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
@@ -43,6 +54,7 @@ CREATE TABLE DimCustomerLocation
 	REFERENCES DimTerritoryCountry([TerritoryKey])
 );
 
+
 CREATE TABLE DimOrderDate
 (
 	OrderDateKey INT NOT NULL PRIMARY KEY,
@@ -63,6 +75,7 @@ CREATE TABLE DimDueDate
 	[YearNumber] SMALLINT NOT NULL,
 );
 
+
 CREATE TABLE DimShipDate
 (
 	ShipDateKey INT NOT NULL PRIMARY KEY,
@@ -72,6 +85,7 @@ CREATE TABLE DimShipDate
 	MonthNumber TINYINT NOT NULL,
 	YearNumber SMALLINT NOT NULL,
 );
+
 
 CREATE TABLE DimCategory(
     CategoryDimKey INT IDENTITY(1,1) PRIMARY KEY,
