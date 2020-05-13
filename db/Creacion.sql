@@ -23,8 +23,8 @@ CREATE TABLE DimEmployee
 
 CREATE TABLE DimTerritoryCountry
 (
-    [TerritoryKey] INT NOT NULL PRIMARY KEY,
-    [TerritoryID] INT IDENTITY(1,1) NOT NULL,
+    [TerritoryKey] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [TerritoryID] INT NOT NULL,
     [TerritoryName] NVARCHAR(50) NOT NULL,
     [CountryRegionCode] NVARCHAR(3) NOT NULL,
     [CountryRegionName] NVARCHAR(50) NOT NULL
