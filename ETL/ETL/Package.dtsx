@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{AB1F8F4F-87B4-4B16-90AA-78CB346498B6}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{086CAB3C-9B25-4822-AB5B-F454DE20B1A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAALvvD+m9jKwx3n6lD17PAYzIMQppxY9vXllQZ/mBJjRwAAAAAOgAAAAAIAACAAAAAJstvwpFyGTZ4vNbMUr+TxBJyluu2t/s6Z6QQlttH1ahAAAACoYiyJK7uaaAInbFS01qbuQAAAAHdyG3MrjMyo1m255m+dvx+Fvn17WPKUk8ZXxie1AaMOPl8XFS6xttfUGiv7kFGiD63NImfvWyTMdVAG8nW3af0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADYwlluORw2rMcGTTYEVMMNriKOP04GnygnWVoeNY/GZgAAAAAOgAAAAAIAACAAAADq8E+GrC0ceWa/qojnWR1zOj4JfuERp98wDHJT2uX+NhAAAAAiN+Aj55XnCS3GjyY2hDshQAAAAJX2prqdhjzE2iuCymRgLhU1i8c8sT+qAUOYpL/AWbkK1Veu7hduhKV8htk4l6NZThf6Qgnlh1bpMFfCxkpoQYc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -52,7 +52,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC1OKpOR9WxsI3gXYSrQVmZ2+pBWj2ppBfcQ63+EiWwLgAAAAAOgAAAAAIAACAAAADzt68gkfvqB4YzcR88FtEx9acvxWNh9z6vzm+hzo60BhAAAADyiXMp2Vucg7tw3V66Cc0ZQAAAALNuRRmEK6kBB4qpOMLq+9smQRlpvg18KfHvIB/qiZJYrLLj4KizmuCTVOsMErZqOOzcxZ4Jjnlq8G2KZk0tB90</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACVtSw+N0bZr1wvTA5ihgVQy1dBlJlbYy3Noar8FG8QsQAAAAAOgAAAAAIAACAAAABLCR2k2DJOSILXx1VbcNV0iime5jQeLpateA8K+HvsyBAAAAClO/pBelIRhwpQOWQdSMaTQAAAAF/B9OsUd9y/6mbJwI7UzdU0t8LxGj3/a9XJWgb1rueSUVlQutwOKUlHaZrQiLF0WNmhyE74AHFemfhhu00T88Y</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -60,10 +60,44 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
+      DTS:refId="Package\Borrar Customer Location"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{df57ac87-7e90-430f-a713-04e4f70c4b69}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Borrar Customer Location"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BF81B78D-94E3-4E0F-9751-8FD0432A6CE7}"
+          SQLTask:SqlStatementSource="DELETE FROM DimCustomerLocation" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Borrar Territory Country"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{5D38A856-172E-41D4-96FD-024BF3B6BDF5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Borrar Territory Country"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BF81B78D-94E3-4E0F-9751-8FD0432A6CE7}"
+          SQLTask:SqlStatementSource="DELETE FROM DimTerritoryCountry" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Customer Location"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{504F9F96-BDF3-4C28-BD02-1AD3CDAA3531}"
+      DTS:DTSID="{7799D886-8E6A-4238-8A61-23F72FEAC85A}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Customer Location"
@@ -74,11 +108,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Customer Location\Country Region Source"
+              refId="Package\Customer Location\Customer Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Country Region Source"
+              name="Customer Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -89,7 +123,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Person].[CountryRegion]</property>
+                  name="OpenRowset">[Sales].[Customer]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -123,7 +157,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Customer Location\Country Region Source.Connections[OleDbConnection]"
+                  refId="Package\Customer Location\Customer Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.AdventureWorks2017]"
                   connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.AdventureWorks2017]"
                   description="The OLE DB runtime connection used to access the database."
@@ -131,77 +165,89 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
-                      dataType="wstr"
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
-                      length="3"
-                      lineageId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
-                      name="CountryRegionCode"
+                      externalMetadataColumnId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].Columns[Name]"
-                      dataType="wstr"
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
-                      length="50"
-                      lineageId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].Columns[Name]"
-                      name="Name"
+                      externalMetadataColumnId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      name="TerritoryID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
-                      dataType="wstr"
-                      length="3"
-                      name="CountryRegionCode" />
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
                     <externalMetadataColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
-                      dataType="wstr"
-                      length="50"
-                      name="Name" />
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[PersonID]"
+                      dataType="i4"
+                      name="PersonID" />
                     <externalMetadataColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[StoreID]"
+                      dataType="i4"
+                      name="StoreID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AccountNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
                       dataType="dbTimeStamp"
                       name="ModifiedDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
-                      name="CountryRegionCode" />
-                    <outputColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output].Columns[Name]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output].Columns[Name]"
-                      name="Name" />
-                    <outputColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
                       dataType="i4"
-                      lineageId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -240,18 +286,16 @@
                   name="Merge Join Left Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[CountryRegionCode]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="CountryRegionCode"
+                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Customer Location\Sort Region.Outputs[Sort Output].Columns[CountryRegionCode]" />
+                      lineageId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[TerritoryID]" />
                     <inputColumn
-                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[Name]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Name"
-                      lineageId="Package\Customer Location\Sort Region.Outputs[Sort Output].Columns[Name]" />
+                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      lineageId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[CustomerID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -261,23 +305,16 @@
                   name="Merge Join Right Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[CountryRegionCode]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="CountryRegionCode"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[CountryRegionCode]" />
-                    <inputColumn
                       refId="Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryID]"
                       cachedDataType="i4"
                       cachedName="TerritoryID"
-                      lineageId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[TerritoryID]" />
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryID]" />
                     <inputColumn
-                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[Name]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Name"
-                      lineageId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[Name]" />
+                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryKey]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryKey"
+                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryKey]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -289,24 +326,24 @@
                   name="Merge Join Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CountryName]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CountryName]"
-                      name="CountryName">
+                      refId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]"
+                      name="CustomerID">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[Name]}</property>
+                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]"
                       dataType="i4"
                       lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]"
-                      name="TerritoryID">
+                      name="TerritoryID"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -316,32 +353,16 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryName]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryName]"
-                      name="TerritoryName">
+                      refId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryKey]"
+                      name="TerritoryKey">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[Name]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]"
-                      name="CountryRegionCode"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[CountryRegionCode]}</property>
+                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryKey]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -350,419 +371,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Customer Location\Sales Territory Source"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="Sales Territory Source"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Sales].[SalesTerritory]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Customer Location\Sales Territory Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.AdventureWorks2017]"
-                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.AdventureWorks2017]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
-                      name="TerritoryID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[Name]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
-                      length="50"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[Name]"
-                      name="Name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
-                      length="3"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
-                      name="CountryRegionCode"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
-                      dataType="i4"
-                      name="TerritoryID" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
-                      dataType="wstr"
-                      length="50"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
-                      dataType="wstr"
-                      length="3"
-                      name="CountryRegionCode" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[Group]"
-                      dataType="wstr"
-                      length="50"
-                      name="Group" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[SalesYTD]"
-                      dataType="cy"
-                      name="SalesYTD" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[SalesLastYear]"
-                      dataType="cy"
-                      name="SalesLastYear" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[CostYTD]"
-                      dataType="cy"
-                      name="CostYTD" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[CostLastYear]"
-                      dataType="cy"
-                      name="CostLastYear" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
-                      dataType="guid"
-                      name="rowguid" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
-                      dataType="dbTimeStamp"
-                      name="ModifiedDate" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                    <outputColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
-                      dataType="i4"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
-                      name="TerritoryID" />
-                    <outputColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[Name]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[Name]"
-                      name="Name" />
-                    <outputColumn
-                      refId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
-                      name="CountryRegionCode" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Customer Location\Sort Region"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort Region"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Customer Location\Sort Region.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Customer Location\Sort Region.Inputs[Sort Input].Columns[CountryRegionCode]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="CountryRegionCode"
-                      lineageId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Customer Location\Sort Region.Inputs[Sort Input].Columns[Name]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Name"
-                      lineageId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].Columns[Name]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Customer Location\Sort Region.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Customer Location\Sort Region.Outputs[Sort Output].Columns[CountryRegionCode]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Customer Location\Sort Region.Outputs[Sort Output].Columns[CountryRegionCode]"
-                      name="CountryRegionCode"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Customer Location\Sort Region.Outputs[Sort Output].Columns[Name]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Customer Location\Sort Region.Outputs[Sort Output].Columns[Name]"
-                      name="Name">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output].Columns[Name]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Customer Location\Sort Sales Territory"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort Sales Territory"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Customer Location\Sort Sales Territory.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Customer Location\Sort Sales Territory.Inputs[Sort Input].Columns[TerritoryID]"
-                      cachedDataType="i4"
-                      cachedName="TerritoryID"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[TerritoryID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Customer Location\Sort Sales Territory.Inputs[Sort Input].Columns[Name]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Name"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[Name]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Customer Location\Sort Sales Territory.Inputs[Sort Input].Columns[CountryRegionCode]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="CountryRegionCode"
-                      lineageId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[TerritoryID]"
-                      dataType="i4"
-                      lineageId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[TerritoryID]"
-                      name="TerritoryID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[TerritoryID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[Name]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[Name]"
-                      name="Name">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[Name]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[CountryRegionCode]"
-                      dataType="wstr"
-                      length="3"
-                      lineageId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output].Columns[CountryRegionCode]"
-                      name="CountryRegionCode"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Customer Location\Territory Country"
+              refId="Package\Customer Location\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Territory Country"
+              name="OLE DB Destination"
               usesDispositions="true"
               version="4">
               <properties>
@@ -773,7 +386,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimTerritoryCountry]</property>
+                  name="OpenRowset">[dbo].[DimCustomerLocation]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -815,7 +428,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Customer Location\Territory Country.Connections[OleDbConnection]"
+                  refId="Package\Customer Location\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
                   connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
                   description="The OLE DB runtime connection used to access the database."
@@ -823,89 +436,395 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input]"
+                  refId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
+                      refId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
                       cachedDataType="i4"
-                      cachedName="TerritoryID"
-                      externalMetadataColumnId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
-                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]" />
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]" />
                     <inputColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].Columns[TerritoryName]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="TerritoryName"
-                      externalMetadataColumnId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryName]"
-                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryName]" />
-                    <inputColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].Columns[CountryRegionCode]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="CountryRegionCode"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
-                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]" />
-                    <inputColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].Columns[CountryName]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="CountryName"
-                      externalMetadataColumnId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
-                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[CountryName]" />
+                      refId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TerritoryKey]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryKey"
+                      externalMetadataColumnId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryFKey]"
+                      lineageId="Package\Customer Location\Merge Join.Outputs[Merge Join Output].Columns[TerritoryKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryKey]"
+                      refId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
                       dataType="i4"
-                      name="TerritoryKey" />
+                      name="CustomerKey" />
                     <externalMetadataColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
+                      refId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
                       dataType="i4"
-                      name="TerritoryID" />
+                      name="CustomerId" />
                     <externalMetadataColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryName]"
-                      dataType="wstr"
-                      length="50"
-                      name="TerritoryName" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
-                      dataType="wstr"
-                      length="3"
-                      name="CountryRegionCode" />
-                    <externalMetadataColumn
-                      refId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
-                      dataType="wstr"
-                      length="50"
-                      name="CountryRegionName" />
+                      refId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryFKey]"
+                      dataType="i4"
+                      name="TerritoryFKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Customer Location\Territory Country.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Customer Location\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Customer Location\Territory Country.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Customer Location\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Customer Location\Territory Country.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Customer Location\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Customer Location\Territory Country.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Customer Location\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Customer Location\Territory Country.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Customer Location\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Customer Location\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Customer Location\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Customer Location\Sort.Inputs[Sort Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Customer Location\Sort.Inputs[Sort Input].Columns[TerritoryKey]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryKey"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Customer Location\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryKey]"
+                      name="TerritoryKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryKey]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Customer Location\Sort Customer"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Customer"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Customer Location\Sort Customer.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Customer Location\Sort Customer.Inputs[Sort Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Customer Location\Sort Customer.Inputs[Sort Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[TerritoryID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Customer Location\Sort Customer.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Customer Location\Territory Country Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Territory Country Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimTerritoryCountry]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Customer Location\Territory Country Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryKey]"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryKey]"
+                      name="TerritoryKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryKey]"
+                      dataType="i4"
+                      name="TerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="TerritoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="CountryRegionName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID" />
+                    <outputColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output].Columns[TerritoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Error Output].Columns[TerritoryKey]"
+                      name="TerritoryKey" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -915,29 +834,29 @@
           <paths>
             <path
               refId="Package\Customer Location.Paths[Merge Join Output]"
-              endId="Package\Customer Location\Territory Country.Inputs[OLE DB Destination Input]"
+              endId="Package\Customer Location\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Merge Join Output"
               startId="Package\Customer Location\Merge Join.Outputs[Merge Join Output]" />
             <path
               refId="Package\Customer Location.Paths[OLE DB Source Output]"
-              endId="Package\Customer Location\Sort Region.Inputs[Sort Input]"
+              endId="Package\Customer Location\Sort Customer.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\Customer Location\Country Region Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Customer Location.Paths[OLE DB Source Output1]"
-              endId="Package\Customer Location\Sort Sales Territory.Inputs[Sort Input]"
+              endId="Package\Customer Location\Sort.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\Customer Location\Sales Territory Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Customer Location.Paths[Sort Output]"
               endId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
-              startId="Package\Customer Location\Sort Region.Outputs[Sort Output]" />
+              startId="Package\Customer Location\Sort Customer.Outputs[Sort Output]" />
             <path
               refId="Package\Customer Location.Paths[Sort Output1]"
               endId="Package\Customer Location\Merge Join.Inputs[Merge Join Right Input]"
               name="Sort Output"
-              startId="Package\Customer Location\Sort Sales Territory.Outputs[Sort Output]" />
+              startId="Package\Customer Location\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2264,20 +2183,886 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Tarea Ejecutar SQL 1"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{5D38A856-172E-41D4-96FD-024BF3B6BDF5}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\Territory Country"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{504F9F96-BDF3-4C28-BD02-1AD3CDAA3531}"
+      DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Tarea Ejecutar SQL 1"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ObjectName="Territory Country"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{BF81B78D-94E3-4E0F-9751-8FD0432A6CE7}"
-          SQLTask:SqlStatementSource="DELETE FROM DimTerritoryCountry" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Territory Country\Country Region Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Country Region Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Person].[CountryRegion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Territory Country\Country Region Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.AdventureWorks2017]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.AdventureWorks2017]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      length="3"
+                      lineageId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
+                    <outputColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Territory Country\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Territory Country\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Territory Country\Merge Join.Inputs[Merge Join Left Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Territory Country\Sort Region.Outputs[Sort Output].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Territory Country\Merge Join.Inputs[Merge Join Left Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Territory Country\Sort Region.Outputs[Sort Output].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Territory Country\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Territory Country\Merge Join.Inputs[Merge Join Right Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Territory Country\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[TerritoryID]" />
+                    <inputColumn
+                      refId="Package\Territory Country\Merge Join.Inputs[Merge Join Right Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Territory Country\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[CountryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[CountryName]"
+                      name="CountryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Territory Country\Merge Join.Inputs[Merge Join Left Input].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]"
+                      name="TerritoryID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Territory Country\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[TerritoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[TerritoryName]"
+                      name="TerritoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Territory Country\Merge Join.Inputs[Merge Join Right Input].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Territory Country\Merge Join.Inputs[Merge Join Right Input].Columns[CountryRegionCode]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Territory Country\Sales Territory Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Sales Territory Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Sales].[SalesTerritory]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Territory Country\Sales Territory Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.AdventureWorks2017]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.AdventureWorks2017]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      length="3"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[Group]"
+                      dataType="wstr"
+                      length="50"
+                      name="Group" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[SalesYTD]"
+                      dataType="cy"
+                      name="SalesYTD" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[SalesLastYear]"
+                      dataType="cy"
+                      name="SalesLastYear" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[CostYTD]"
+                      dataType="cy"
+                      name="CostYTD" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[CostLastYear]"
+                      dataType="cy"
+                      name="CostLastYear" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID" />
+                    <outputColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Territory Country\Sort Region"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Region"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Territory Country\Sort Region.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Territory Country\Sort Region.Inputs[Sort Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      lineageId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Territory Country\Sort Region.Inputs[Sort Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Territory Country\Sort Region.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Territory Country\Sort Region.Outputs[Sort Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Territory Country\Sort Region.Outputs[Sort Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Territory Country\Sort Region.Outputs[Sort Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Territory Country\Sort Region.Outputs[Sort Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Territory Country\Sort Sales Territory"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Sales Territory"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Territory Country\Sort Sales Territory.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Territory Country\Sort Sales Territory.Inputs[Sort Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[TerritoryID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Territory Country\Sort Sales Territory.Inputs[Sort Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Territory Country\Sort Sales Territory.Inputs[Sort Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      lineageId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[TerritoryID]"
+                      name="TerritoryID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Territory Country\Territory Country"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Territory Country"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimTerritoryCountry]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Territory Country\Territory Country.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      externalMetadataColumnId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]" />
+                    <inputColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].Columns[TerritoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TerritoryName"
+                      externalMetadataColumnId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryName]"
+                      lineageId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[TerritoryName]" />
+                    <inputColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
+                      lineageId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].Columns[CountryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CountryName"
+                      externalMetadataColumnId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
+                      lineageId="Package\Territory Country\Merge Join.Outputs[Merge Join Output].Columns[CountryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryKey]"
+                      dataType="i4"
+                      name="TerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="TerritoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="CountryRegionName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Territory Country\Territory Country.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Territory Country\Territory Country.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Territory Country.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Territory Country\Territory Country.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Territory Country\Territory Country.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Territory Country.Paths[Merge Join Output]"
+              endId="Package\Territory Country\Territory Country.Inputs[OLE DB Destination Input]"
+              name="Merge Join Output"
+              startId="Package\Territory Country\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Territory Country.Paths[OLE DB Source Output]"
+              endId="Package\Territory Country\Sort Region.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Territory Country\Country Region Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Territory Country.Paths[OLE DB Source Output1]"
+              endId="Package\Territory Country\Sort Sales Territory.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Territory Country\Sales Territory Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Territory Country.Paths[Sort Output]"
+              endId="Package\Territory Country\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Territory Country\Sort Region.Outputs[Sort Output]" />
+            <path
+              refId="Package\Territory Country.Paths[Sort Output1]"
+              endId="Package\Territory Country\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Territory Country\Sort Sales Territory.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2294,9 +3079,25 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{5119895B-162D-4F7C-B660-F55D2EF5B3F7}"
-      DTS:From="Package\Tarea Ejecutar SQL 1"
+      DTS:From="Package\Borrar Territory Country"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Territory Country" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0B4FA4D-0608-4FA4-8EA0-625BA207B53A}"
+      DTS:From="Package\Borrar Customer Location"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Borrar Territory Country" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{33A9A6EC-C609-4AB8-A04B-263A7042BBCF}"
+      DTS:From="Package\Territory Country"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
       DTS:To="Package\Customer Location" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -2310,26 +3111,26 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="126.666666666667,42.6666666666667"
           Id="Package\Date SQL"
-          TopLeft="42.1874993713575,60.4385976288348" />
+          TopLeft="42.1874993713575,92.9385982405667" />
         <NodeLayout
           Size="126.666666666667,42.6666666666667"
           Id="Package\Employee"
-          TopLeft="519.583325590938,151.324564251818" />
+          TopLeft="519.583325590938,183.82456486355" />
         <NodeLayout
-          Size="169.333333333334,42.6666666666667"
-          Id="Package\Customer Location"
-          TopLeft="278.854162511416,147.447371196384" />
+          Size="160,42.6666666666667"
+          Id="Package\Territory Country"
+          TopLeft="278.854162511416,179.947371808115" />
         <NodeLayout
           Size="173.333333333334,42.6666666666667"
           Id="Package\Tarea Ejecutar SQL"
-          TopLeft="492.499992661178,63.7456152349408" />
+          TopLeft="492.499992661178,96.2456158466727" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="581.041659126058,106.412281901607">
+          TopLeft="581.041659126058,138.912282513339">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2350,23 +3151,75 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="182.666666666667,42"
-          Id="Package\Tarea Ejecutar SQL 1"
-          TopLeft="267.187496018596,65.7982468525238" />
+          Size="192,42.6666666666667"
+          Id="Package\Borrar Territory Country"
+          TopLeft="267.187496018596,98.2982474642558" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="361.020829265006,107.798246852524">
+          TopLeft="361.020829265006,140.964914130922">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.6491243438598"
+              EndConnector="0,38.9824576771931"
               Start="0,0"
-              End="0,32.1491243438598">
+              End="0,31.4824576771931">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.1491243438598" />
+                    End="0,31.4824576771931" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Customer Location"
+          TopLeft="272.916662599891,254.868425849897" />
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Borrar Customer Location"
+          TopLeft="270.31249597203,15.2105247167011" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="362.41666266198,57.8771913833677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.421056080888"
+              Start="0,0"
+              End="0,32.921056080888">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.921056080888" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="358.218745888987,222.614038474782">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.2543873751154"
+              Start="0,0"
+              End="0,24.7543873751154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7543873751154" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2610,32 +3463,32 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Customer Location">
+    design-time-name="Package\Territory Country">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="190.666666666667,42.6666666666667"
-          Id="Package\Customer Location\Country Region Source"
+          Id="Package\Territory Country\Country Region Source"
           TopLeft="455.333333333333,72" />
         <NodeLayout
           Size="185.333333333334,42.6666666666667"
-          Id="Package\Customer Location\Sales Territory Source"
+          Id="Package\Territory Country\Sales Territory Source"
           TopLeft="686.444444444444,73.4444444444444" />
         <NodeLayout
           Size="132,42.6666666666667"
-          Id="Package\Customer Location\Merge Join"
+          Id="Package\Territory Country\Merge Join"
           TopLeft="601.666666666667,238.333333333333" />
         <NodeLayout
           Size="136,42.6666666666667"
-          Id="Package\Customer Location\Sort Region"
+          Id="Package\Territory Country\Sort Region"
           TopLeft="480.555555555556,151.666666666667" />
         <NodeLayout
           Size="172,42.6666666666667"
-          Id="Package\Customer Location\Sort Sales Territory"
+          Id="Package\Territory Country\Sort Sales Territory"
           TopLeft="692.777777777778,150" />
         <EdgeLayout
-          Id="Package\Customer Location.Paths[OLE DB Source Output]"
+          Id="Package\Territory Country.Paths[OLE DB Source Output]"
           TopLeft="549.611111111111,114.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2657,7 +3510,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Customer Location.Paths[OLE DB Source Output1]"
+          Id="Package\Territory Country.Paths[OLE DB Source Output1]"
           TopLeft="778.944444444444,116.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2679,7 +3532,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Customer Location.Paths[Sort Output]"
+          Id="Package\Territory Country.Paths[Sort Output]"
           TopLeft="548.555555555556,194.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2713,7 +3566,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Customer Location.Paths[Sort Output1]"
+          Id="Package\Territory Country.Paths[Sort Output1]"
           TopLeft="778.777777777778,192.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2748,22 +3601,22 @@
         </EdgeLayout>
         <NodeLayout
           Size="160,42.6666666666667"
-          Id="Package\Customer Location\Territory Country"
-          TopLeft="584.444444444444,308.333333333333" />
+          Id="Package\Territory Country\Territory Country"
+          TopLeft="590.505050505051,307.727272727273" />
         <EdgeLayout
-          Id="Package\Customer Location.Paths[Merge Join Output]"
-          TopLeft="666.055555555555,281">
+          Id="Package\Territory Country.Paths[Merge Join Output]"
+          TopLeft="669.085858585859,281">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.3333333333333"
+              EndConnector="0,26.7272727272726"
               Start="0,0"
-              End="0,19.8333333333333">
+              End="0,19.2272727272726">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.8333333333333" />
+                    End="0,19.2272727272726" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2776,7 +3629,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Customer Location\Country Region Source">
+    design-time-name="Package\Territory Country\Country Region Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2789,7 +3642,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Customer Location\Sales Territory Source">
+    design-time-name="Package\Territory Country\Sales Territory Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2802,7 +3655,219 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Customer Location\Territory Country">
+    design-time-name="Package\Territory Country\Territory Country">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Customer Location">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Customer Location\Customer Source"
+          TopLeft="251.683760683761,36.7264957264958" />
+        <NodeLayout
+          Size="196.666666666667,42.6666666666667"
+          Id="Package\Customer Location\Territory Country Source"
+          TopLeft="476.239316239316,36.8376068376068" />
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\Customer Location\Sort Customer"
+          TopLeft="262.350427350428,108.504273504274" />
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[OLE DB Source Output]"
+          TopLeft="334.683760683761,79.3931623931624">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.1111111111111"
+              Start="0,0"
+              End="0,21.6111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Customer Location\Sort"
+          TopLeft="530.128205128205,108.504273504274" />
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[OLE DB Source Output1]"
+          TopLeft="577.017094017094,79.5042735042735">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.0000000000001"
+              Start="0,0"
+              End="0,21.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Customer Location\Merge Join"
+          TopLeft="379.017094017094,185.726495726496" />
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[Sort Output]"
+          TopLeft="336.350427350428,151.17094017094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.9999999999993,34.5555555555556"
+              Start="0,0"
+              End="87.9999999999993,27.0555555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4850299401198" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4850299401198"
+                    Point2="0,20.4850299401198"
+                    Point3="4,20.4850299401198" />
+                  <mssgle:LineSegment
+                    End="83.9999999999993,20.4850299401198" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.9999999999993,20.4850299401198"
+                    Point2="87.9999999999993,20.4850299401198"
+                    Point3="87.9999999999993,24.4850299401198" />
+                  <mssgle:LineSegment
+                    End="87.9999999999993,27.0555555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[Sort Output1]"
+          TopLeft="579.461538461538,151.17094017094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-113.777777777778,34.5555555555555"
+              Start="0,0"
+              End="-113.777777777778,27.0555555555555">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4850299401197" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4850299401197"
+                    Point2="0,20.4850299401197"
+                    Point3="-4,20.4850299401197" />
+                  <mssgle:LineSegment
+                    End="-109.777777777778,20.4850299401197" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-109.777777777778,20.4850299401197"
+                    Point2="-113.777777777778,20.4850299401197"
+                    Point3="-113.777777777778,24.4850299401197" />
+                  <mssgle:LineSegment
+                    End="-113.777777777778,27.0555555555555" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Customer Location\OLE DB Destination"
+          TopLeft="358.461538461538,261.538461538461" />
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[Merge Join Output]"
+          TopLeft="445.405982905983,228.393162393162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.145299145299"
+              Start="0,0"
+              End="0,25.645299145299">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.645299145299" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Preguntar sobre las 19 mil tuplas de resultado"
+          ParentId="Package\Customer Location"
+          FontInfo="{assembly:Null}"
+          Size="250.666666666667,60"
+          Id="2c0c52ef-30ea-4b37-8997-caf0d165ecb6"
+          TopLeft="547.179487179487,260.051282051282" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Location\Customer Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Location\Territory Country Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Location\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
