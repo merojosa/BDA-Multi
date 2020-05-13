@@ -14,12 +14,11 @@ CREATE TABLE DimEmployee
 	EmployeeKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	BusinessEntityId INT NOT NULL UNIQUE,
 	EmployeeFirstName NVARCHAR(50) NOT NULL,
-	EmployeeMiddleName NVARCHAR(50) NOT NULL,
 	EmployeeLastName NVARCHAR(50) NOT NULL,
 	VacationHours SMALLINT NOT NULL,
 	GenderName NVARCHAR(30) NOT NULL, -- Hay que hacer transformacion para ponerlo explicito
 	HireDate DATE NOT NULL,
-	MaritalStatus NCHAR(1) NOT NULL
+	MaritalStatus NVARCHAR(20) NOT NULL
 );
 
 CREATE TABLE DimTerritoryCountry
