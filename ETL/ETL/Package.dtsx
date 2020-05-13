@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{27F00BCE-9699-4709-A508-98F998DF25FE}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{A4207A48-C194-496A-98B7-B0E736356111}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAC8/5tIwQK/ePYgLBLj2m7/dK/IqtpW87Fo7t5hmLDagAAAAAOgAAAAAIAACAAAADueq7ukWbL/txmxswPP6WFb+e3fvYYoUTRDOVBrxouRBAAAAA9RkKTdnTLDCt3peJQTcO2QAAAAHSdsSPzg/iMZKwfff88l8t/Fp4qIOWHtFfymuKrr+WZ24zBCqiP9WZAQCz+/RHX2e2rBrW9vWz2JveGoy+6OIA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACDY4yIkfva5s9OIBou88x2uP4lzDL6OQYGB5vv2rHFJwAAAAAOgAAAAAIAACAAAACzU6wJPa+wAfc8xQcrhnIFvdSe/g3/kQSqFLImJLNmGxAAAADL+6DH/M1lAT+K4x1pn7gcQAAAAHKcsFApVV6qJe9I80hPdfvecY3d8DIDENp5yExLA8q8FVv1NQz1i5jVdgNAa1hoEZhE8W5x9DkVrMsMAi0p2pg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -52,7 +52,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABzPQFL44Bw4WuHMVsJL7DNmPYAOYy+HdkPLi72PoT4HQAAAAAOgAAAAAIAACAAAACWU5OTn6aRLGnOEdiqej35fZWdsaDlmYCw08RWfe5XAxAAAACgk0pnDnDqYbrRRWa0QWLhQAAAAByv7Q2hgdLlxHAid8HHHLxGeNZMQlNAayFNa1FPcLoRhGir8t2342lizkHEYT5WXwCGuIvygudovwxYpS8Qiag</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADhUNB9xXtwZZ4209vzPKF5txgbZaWAHTbnHsJHyn/OCwAAAAAOgAAAAAIAACAAAAB+Eq9q7cTS5S/11ADxpnLen+WUU2oYrEFM2mAyQIT20BAAAAAfZ7jMIYFfsDQcuhmN0/waQAAAACBYpyScqJ3Ue8QrjqFCd51rfEXqNDQ88i/jwAf1xpjUFJECWF7KjyWwQmB8FbE672BpfUd/G3T5Yl3DSiVqO4U</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -68,7 +68,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Borrar Dates"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -80,13 +80,12 @@
       DTS:refId="Package\Borrar Employees"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:Disabled="True"
       DTS:DTSID="{6D230F90-F2BC-46CA-A010-52824EC564F4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Borrar Employees"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -98,13 +97,12 @@
       DTS:refId="Package\Borrar Location"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:Disabled="True"
       DTS:DTSID="{df57ac87-7e90-430f-a713-04e4f70c4b69}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Borrar Location"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -116,13 +114,12 @@
       DTS:refId="Package\Borrar Products"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:Disabled="True"
       DTS:DTSID="{4588FC82-CF1B-4F74-B9B3-096DC6EE61EA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Borrar Products"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -134,7 +131,6 @@
       DTS:refId="Package\Category"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{8A2AD64F-C225-4D6D-AC23-76F923668CFF}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -424,7 +420,6 @@
       DTS:refId="Package\Customer Location"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{7799D886-8E6A-4238-8A61-23F72FEAC85A}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -618,12 +613,12 @@
                       cachedDataType="i4"
                       cachedName="TerritoryID"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[TerritoryID]" />
+                      lineageId="Package\Customer Location\Sort 1.Outputs[Sort Output].Columns[TerritoryID]" />
                     <inputColumn
-                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerID]"
+                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[TerritoryKey]"
                       cachedDataType="i4"
-                      cachedName="CustomerID"
-                      lineageId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[CustomerID]" />
+                      cachedName="TerritoryKey"
+                      lineageId="Package\Customer Location\Sort 1.Outputs[Sort Output].Columns[TerritoryKey]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -639,10 +634,10 @@
                       cachedSortKeyPosition="1"
                       lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryID]" />
                     <inputColumn
-                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryKey]"
+                      refId="Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[CustomerID]"
                       cachedDataType="i4"
-                      cachedName="TerritoryKey"
-                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryKey]" />
+                      cachedName="CustomerID"
+                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[CustomerID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -663,7 +658,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerID]}</property>
+                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[CustomerID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -690,7 +685,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryKey]}</property>
+                          name="InputColumnID">#{Package\Customer Location\Merge Join.Inputs[Merge Join Left Input].Columns[TerritoryKey]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -736,7 +731,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -748,7 +743,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -849,104 +844,7 @@
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Customer Location\Sort.Inputs[Sort Input].Columns[TerritoryID]"
-                      cachedDataType="i4"
-                      cachedName="TerritoryID"
-                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Customer Location\Sort.Inputs[Sort Input].Columns[TerritoryKey]"
-                      cachedDataType="i4"
-                      cachedName="TerritoryKey"
-                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryKey]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Customer Location\Sort.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryID]"
-                      dataType="i4"
-                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryID]"
-                      name="TerritoryID"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryKey]"
-                      dataType="i4"
-                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryKey]"
-                      name="TerritoryKey">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryKey]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Customer Location\Sort Customer"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort Customer"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Customer Location\Sort Customer.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Customer Location\Sort Customer.Inputs[Sort Input].Columns[CustomerID]"
+                      refId="Package\Customer Location\Sort.Inputs[Sort Input].Columns[CustomerID]"
                       cachedDataType="i4"
                       cachedName="CustomerID"
                       lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[CustomerID]">
@@ -962,7 +860,7 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Customer Location\Sort Customer.Inputs[Sort Input].Columns[TerritoryID]"
+                      refId="Package\Customer Location\Sort.Inputs[Sort Input].Columns[TerritoryID]"
                       cachedDataType="i4"
                       cachedName="TerritoryID"
                       lineageId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[TerritoryID]">
@@ -983,14 +881,14 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Customer Location\Sort Customer.Outputs[Sort Output]"
+                  refId="Package\Customer Location\Sort.Outputs[Sort Output]"
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[CustomerID]"
+                      refId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[CustomerID]"
                       dataType="i4"
-                      lineageId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[CustomerID]"
+                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[CustomerID]"
                       name="CustomerID">
                       <properties>
                         <property
@@ -1001,9 +899,9 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[TerritoryID]"
+                      refId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryID]"
                       dataType="i4"
-                      lineageId="Package\Customer Location\Sort Customer.Outputs[Sort Output].Columns[TerritoryID]"
+                      lineageId="Package\Customer Location\Sort.Outputs[Sort Output].Columns[TerritoryID]"
                       name="TerritoryID"
                       sortKeyPosition="1">
                       <properties>
@@ -1012,6 +910,103 @@
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
                           name="SortColumnId">#{Package\Customer Location\Customer Source.Outputs[OLE DB Source Output].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Customer Location\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Customer Location\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Customer Location\Sort 1.Inputs[Sort Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Customer Location\Sort 1.Inputs[Sort Input].Columns[TerritoryKey]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryKey"
+                      lineageId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Customer Location\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Customer Location\Sort 1.Outputs[Sort Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Sort 1.Outputs[Sort Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Customer Location\Sort 1.Outputs[Sort Output].Columns[TerritoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Customer Location\Sort 1.Outputs[Sort Output].Columns[TerritoryKey]"
+                      name="TerritoryKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output].Columns[TerritoryKey]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1167,24 +1162,24 @@
               startId="Package\Customer Location\Merge Join.Outputs[Merge Join Output]" />
             <path
               refId="Package\Customer Location.Paths[OLE DB Source Output]"
-              endId="Package\Customer Location\Sort Customer.Inputs[Sort Input]"
+              endId="Package\Customer Location\Sort 1.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Customer Location.Paths[OLE DB Source Output1]"
               endId="Package\Customer Location\Sort.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\Customer Location\Territory Country Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Customer Location\Customer Source.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Customer Location.Paths[Sort Output]"
-              endId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Customer Location\Sort Customer.Outputs[Sort Output]" />
-            <path
-              refId="Package\Customer Location.Paths[Sort Output1]"
               endId="Package\Customer Location\Merge Join.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Customer Location\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Customer Location.Paths[Sort Output1]"
+              endId="Package\Customer Location\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Customer Location\Sort 1.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1193,7 +1188,6 @@
       DTS:refId="Package\Employee"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{3D5FF921-DE40-4191-AADF-D0A85DA61B8F}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2480,7 +2474,6 @@
       DTS:refId="Package\Product"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{E53115D9-5F50-4566-AB71-F00421A7520B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4854,6 +4847,7 @@ public class Variables
 
 #region Namespaces
 using System;
+using System.CodeDom;
 using System.Data;
 using System.Globalization;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
@@ -4923,6 +4917,8 @@ public class ScriptMain : UserComponent
      */
     #endregion
 
+    private static CultureInfo culture = new CultureInfo("en");
+
     /// <summary>
     /// This method is called once, before rows begin to be processed in the data flow.
     ///
@@ -4968,7 +4964,6 @@ public class ScriptMain : UserComponent
         DateTime order = Row.OrderDate;
         DateTime ship = Row.ShipDate;
         DateTime due = Row.DueDate;
-        CultureInfo culture = new CultureInfo("en");
 
         // Outputs con transformacion
 
@@ -5338,7 +5333,7 @@ public class Input0Buffer: ScriptBuffer
     <msb:CodeName>SC_5848c9adef3c4a04bc77b004b8eeb8b0</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_5848c9adef3c4a04bc77b004b8eeb8b0</msb:DisplayName>
-    <msb:ProjectId>{BA57F55B-DCD0-4470-8DF9-58509972F360}</msb:ProjectId>
+    <msb:ProjectId>{C0996423-3C28-4602-97E5-42D9BD1EAE8C}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_5848c9adef3c4a04bc77b004b8eeb8b0.csproj" />
@@ -5485,115 +5480,115 @@ namespace SC_5848c9adef3c4a04bc77b004b8eeb8b0.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[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
-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
+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
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABQ2AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+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
-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
+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
-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
-AO4GAAABAEYDCQCOBQEAEQCOBQYAGQCOBQoAKQCOBRAAMQCOBRAAOQCOBRAAQQCOBRAASQCOBRAA
-UQCOBRAAWQCOBRAAYQCOBRAAaQCOBQYAsQCOBQYAyQCOBRUA2QCOBQYAoQAvAwYAoQA6AwYAeQCO
-BRAAcQBvAygAqQBmAy0AcQBmAzEAiQCOBTgAiQBzBUIAiQBqBkYAkQDjAEoAiQCABFAAiQCPBFUA
-iQCHBAEA6QCOBRAAiQBhB1sAiQCyBlsAoQCOBQYA8QCYBl8AoQB+BmYAqQCOBQYAAQFhAGwAAQFp
-B3UAuQCOBXsA0QCOBQYALgALAAIBLgATAAsBLgAbACoBLgAjADMBLgArAFwBLgAzAFwBLgA7AFwB
-LgBDADMBLgBLAGIBLgBTAFwBLgBbAHkBQwBjAMMB4QB7AMMB4wBrAMMBaQJzACoBiQJzACoBGwAD
-AAEABwATAAgAFQAAAHIB5gAAAHYE6wAAAFkB5gAAAE8E6wAAAGUB5gAAAGIE6wAAANYA7wAAADcE
-6wAAAJoA7wAAAPAD6wAAAMYA7wAAACAE6wAAAIgA7wAAANcD6wAAALcA7wAAAAoE6wAAAHcA7wAA
-AL8D6wAAAH4F8wAAADUB+AAAAMIG/QACAAYAAwACAAcABQACAAgABwACAAkACQACAAoACwACAAsA
-DQABAAwADwABAA0AEQABAA4AEwABAA8AFQABABAAFwABABEAGQABABIAGwABABMAHQABABQAHwAB
-ABUAIQABABYAIwABABcAJQACACEAJwACACIAKQABACMAKQACACQAKwAEgAAAAQAAAAAAAAAAAAAA
-AAABAAAABAAAAAAAAAAAAAAAgwA2AAAAAAAPAAAAAAAAAAAAAACMAPgGAAAAAA8AAAAAAAAAAAAA
-AIwAFQcAAAAABAAAAAAAAAAAAAAAgwCYBAAAAAAAAAAAAQAAAN8FAAAAAABTQ181ODQ4YzlhZGVm
-M2M0YTA0YmM3N2IwMDRiOGVlYjhiMAA8TW9kdWxlPgBJbnB1dElEAG1zY29ybGliAGRlZmF1bHRJ
-bnN0YW5jZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBzZXRfRHVlTW9udGhO
-YW1lAHNldF9TaGlwTW9udGhOYW1lAHNldF9PcmRlck1vbnRoTmFtZQBJbnB1dE5hbWUAc2V0X0R1
-ZURheU5hbWUAc2V0X1NoaXBEYXlOYW1lAHNldF9PcmRlckRheU5hbWUAR2V0RGF0ZVRpbWUATWlj
-cm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVy
-ZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UAZ2V0X0R1ZURhdGUAZ2V0
-X1NoaXBEYXRlAGdldF9PcmRlckRhdGUARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5l
-cmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0
-cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFz
-c2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJs
-eUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21w
-aWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3Nl
-bWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJp
-YnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1
-dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5n
-AFRvU3RyaW5nAGdldF9EYXlPZldlZWsAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDXzU4NDhjOWFk
-ZWYzYzRhMDRiYzc3YjAwNGI4ZWViOGIwLmRsbABzZXRfRHVlTW9udGhOYW1lX0lzTnVsbABzZXRf
-U2hpcE1vbnRoTmFtZV9Jc051bGwAc2V0X09yZGVyTW9udGhOYW1lX0lzTnVsbABzZXRfRHVlRGF5
-TmFtZV9Jc051bGwAc2V0X1NoaXBEYXlOYW1lX0lzTnVsbABzZXRfT3JkZXJEYXlOYW1lX0lzTnVs
-bABnZXRfRHVlRGF0ZV9Jc051bGwAZ2V0X1NoaXBEYXRlX0lzTnVsbABnZXRfT3JkZXJEYXRlX0lz
-TnVsbABTZXROdWxsAHNldF9JdGVtAFN5c3RlbQByZXNvdXJjZU1hbgBTY3JpcHRNYWluAFN5c3Rl
-bS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAElu
-dmFsaWRPcGVyYXRpb25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRw
-dXROYW1lTWFwAE91dHB1dE1hcABJRm9ybWF0UHJvdmlkZXIASW5wdXQwQnVmZmVyAFBpcGVsaW5l
-QnVmZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAC5jdG9yAC5jY3RvcgBTeXN0
-ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVz
-b3VyY2VzAFNDXzU4NDhjOWFkZWYzYzRhMDRiYzc3YjAwNGI4ZWViOGIwLlByb3BlcnRpZXMuUmVz
-b3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ181ODQ4YzlhZGVmM2M0YTA0YmM3N2Iw
-MDRiOGVlYjhiMC5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZmZXJDb2x1bW5JbmRleGVzAEdldENv
-bHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5lY3Rpb25zAE9iamVjdABFbmRPZlJvd3Nl
-dABnZXRfRGVmYXVsdABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25l
-bnQATWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVs
-aW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJv
-dwBnZXRfQXNzZW1ibHkAAAAABWUAbgAACU0ATQBNAE0AAICbSQBzAE4AdQBsAGwAIABwAHIAbwBw
-AGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4A
-IABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBu
-ACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfADUAOAA0ADgAYwA5AGEA
-ZABlAGYAMwBjADQAYQAwADQAYgBjADcANwBiADAAMAA0AGIAOABlAGUAYgA4AGIAMAAuAFAAcgBv
-AHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAXaRnGONh00ucfu1YzUSC/AAEIAEB
-CAMgAAEFIAEBEREEIAEBDgUgAQERYQwHBRE5ETkRORI9EUEEIAARQQMgAA4GIAIODhJxCSADARJJ
-HQgSTQMGEkkDBh0IBSABETkIBCABAggFIAIBCBwDIAACBiACAg4RfQUgAR0ICAgAARKAgRGAhQUg
-ABKAiQcgAgEOEoCJCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJRAwYSXQMGEj0DBhIgBSAB
-ARIMBCAAETkEIAEBAgkgBAEIDhJJEk0FIAEBElEEAAASXQQAABI9BQABARI9BAAAEiADAAABBCgA
-ETkDKAACAygADgQIABJdBAgAEj0ECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlv
-blRocm93cwEIAQACAAAAAAAoAQAjU0NfNTg0OGM5YWRlZjNjNGEwNGJjNzdiMDA0YjhlZWI4YjAA
-AAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMAAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12
-NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcEAQAAALQAAADO
-yu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZl
-cnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5
-MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFE
-UEFEULQAAAA8NgAAAAAAAAAAAABWNgAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDYAAAAAAAAA
-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
+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
++SEAAAAAhgiEABAACwADIgAAAACGCNsDugAMABoiAAAAAIYIswAQAA0AJCIAAAAAhggOBLoADgA7
+IgAAAACGCHMAEAAPAEUiAAAAAIYIwwO6ABAAXCIAAAAAhgBpB1kAEQBkIgAAAACGALoGWQARAGwi
+AAAAAIYYlgUGABEAjCIAAAAAxgBFB78AEQCxIgAAAADGAT4HqwAVAMQiAAAAAMYBUgerABYAxiIA
+AAAAhhiWBckAFwDVIgAAAACGGJYFyQAYAOQiAAAAAIMYlgUGABkA7CIAAAAAkwiCBc8AGQAYIwAA
+AACTCBUB1AAZAB8jAAAAAJMIIQHZABkAJyMAAAAAlgjGBt8AGgAuIwAAAACGGJYFBgAaADYjAAAA
+AJEYnAWxABoAAAABAG0HAAABAHsFAAACAHIGAAADAD8FAAABAE4DAAABAE4DAAABAE4DAAABAE4D
+AAABAE4DAAABAE4DAAABAE4DAAABAE4DAAABAE4DAAABAE4DAAABAE4DAAABAE4DAAABAC4AAAAC
+AKkAAAADAHsFAAAEAD8FAAABAHsFAAABAG0HAAABAPYGAAABAPYGAAABAE4DCQCWBQEAEQCWBQYA
+GQCWBQoAKQCWBRAAMQCWBRAAOQCWBRAAQQCWBRAASQCWBRAAUQCWBRAAWQCWBRAAYQCWBRAAaQCW
+BQYAsQCWBQYAyQCWBRUA2QCWBQYAoQA3AwYAoQBCAwYAeQB3AyYAqQBuAysAeQBuAy8AcQCWBRAA
+iQCWBTYAiQB7BUAAiQByBkQAkQDjAEgAiQCIBE4AiQCXBFMAiQCPBAEA6QCWBRAAiQBpB1kAiQC6
+BlkAoQCWBQYA8QCgBl0AoQCGBmQAqQCWBQYAAQFhAGoAAQFxB3MAuQCWBXkA0QCWBQYALgALAAAB
+LgATAAkBLgAbACgBLgAjADEBLgArAFoBLgAzAFoBLgA7AFoBLgBDADEBLgBLAGABLgBTAFoBLgBb
+AHcBQwBjAMEB4wBrAMEBAQF7AMEBaQJzACgBiQJzACgBGwADAAEABwATAAgAFQAAAHoB5AAAAH4E
+6QAAAGEB5AAAAFcE6QAAAG0B5AAAAGoE6QAAANYA7QAAAD8E6QAAAJoA7QAAAPgD6QAAAMYA7QAA
+ACgE6QAAAIgA7QAAAN8D6QAAALcA7QAAABIE6QAAAHcA7QAAAMcD6QAAAIYF8QAAADUB9gAAAMoG
++wACAAcAAwACAAgABQACAAkABwACAAoACQACAAsACwACAAwADQABAA0ADwABAA4AEQABAA8AEwAB
+ABAAFQABABEAFwABABIAGQABABMAGwABABQAHQABABUAHwABABYAIQABABcAIwABABgAJQACACIA
+JwACACMAKQABACQAKQACACUAKwAEgAAAAQAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAAAAAAgQA2
+AAAAAAAPAAAAAAAAAAAAAACKAAAHAAAAAA8AAAAAAAAAAAAAAIoAHQcAAAAABAAAAAAAAAAAAAAA
+gQCgBAAAAAAAAAAAAQAAAOcFAAAAAABTQ181ODQ4YzlhZGVmM2M0YTA0YmM3N2IwMDRiOGVlYjhi
+MAA8TW9kdWxlPgBJbnB1dElEAG1zY29ybGliAGRlZmF1bHRJbnN0YW5jZQBSdW50aW1lVHlwZUhh
+bmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBzZXRfRHVlTW9udGhOYW1lAHNldF9TaGlwTW9udGhOYW1l
+AHNldF9PcmRlck1vbnRoTmFtZQBJbnB1dE5hbWUAc2V0X0R1ZURheU5hbWUAc2V0X1NoaXBEYXlO
+YW1lAHNldF9PcmRlckRheU5hbWUAR2V0RGF0ZVRpbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMu
+UGlwZWxpbmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAY3Vs
+dHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBnZXRfRHVlRGF0ZQBnZXRfU2hpcERhdGUAZ2V0
+X09yZGVyRGF0ZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0
+ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9y
+QnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1h
+cmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlv
+bkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhh
+dGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0
+QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5
+Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVjdXRl
+AFBvc3RFeGVjdXRlAHZhbHVlAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcAZ2V0
+X0RheU9mV2VlawBTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU0NfNTg0OGM5YWRlZjNjNGEwNGJjNzdi
+MDA0YjhlZWI4YjAuZGxsAHNldF9EdWVNb250aE5hbWVfSXNOdWxsAHNldF9TaGlwTW9udGhOYW1l
+X0lzTnVsbABzZXRfT3JkZXJNb250aE5hbWVfSXNOdWxsAHNldF9EdWVEYXlOYW1lX0lzTnVsbABz
+ZXRfU2hpcERheU5hbWVfSXNOdWxsAHNldF9PcmRlckRheU5hbWVfSXNOdWxsAGdldF9EdWVEYXRl
+X0lzTnVsbABnZXRfU2hpcERhdGVfSXNOdWxsAGdldF9PcmRlckRhdGVfSXNOdWxsAFNldE51bGwA
+c2V0X0l0ZW0AU3lzdGVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRp
+b24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlv
+bkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0
+cHV0TWFwAElGb3JtYXRQcm92aWRlcgBJbnB1dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0
+QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGlj
+cwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU0NfNTg0
+OGM5YWRlZjNjNGEwNGJjNzdiMDA0YjhlZWI4YjAuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3Vy
+Y2VzAERlYnVnZ2luZ01vZGVzAFNDXzU4NDhjOWFkZWYzYzRhMDRiYzc3YjAwNGI4ZWViOGIwLlBy
+b3BlcnRpZXMAVmFyaWFibGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0Q29sdW1uSW5kZXhlcwBT
+ZXR0aW5ncwBFcXVhbHMAQ29ubmVjdGlvbnMAT2JqZWN0AEVuZE9mUm93c2V0AGdldF9EZWZhdWx0
+AFVzZXJDb21wb25lbnQAUGFyZW50Q29tcG9uZW50AFNjcmlwdENvbXBvbmVudABNaWNyb3NvZnQu
+U3FsU2VydmVyLlR4U2NyaXB0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuUGlwZWxpbmVIb3N0AElucHV0
+MF9Qcm9jZXNzSW5wdXQASW5wdXQwX1Byb2Nlc3NJbnB1dFJvdwBOZXh0Um93AGdldF9Bc3NlbWJs
+eQAAAAAJTQBNAE0ATQAABWUAbgAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMA
+YQBuAG4AbwB0ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBu
+ACAAYQAgAHYAYQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUA
+YQBkAC4AAA9JAG4AcAB1AHQAIAAwAABxUwBDAF8ANQA4ADQAOABjADkAYQBkAGUAZgAzAGMANABh
+ADAANABiAGMANwA3AGIAMAAwADQAYgA4AGUAZQBiADgAYgAwAC4AUAByAG8AcABlAHIAdABpAGUA
+cwAuAFIAZQBzAG8AdQByAGMAZQBzAADJXcdazIN9Rrv8QoyoSUljAAQgAQEIAyAAAQUgAQEREQQg
+AQEOBSABARFhCgcEET0RPRE9EUEEIAARQQMgAA4GIAIODhJxCSADARJJHQgSTQMGEkkDBh0IBSAB
+ET0IBCABAggFIAIBCBwDIAACBiACAg4RfQUgAR0ICAgAARKAgRGAhQUgABKAiQcgAgEOEoCJCLd6
+XFYZNOCJCImEXc2AgMyRAwYSOQMGEhQDBhIYAwYSUQMGEl0DBhIgBSABARIMAwAAAQQgABE9BCAB
+AQIJIAQBCA4SSRJNBSABARJRBAAAEl0EAAASOQUAAQESOQQAABIgBCgAET0DKAACAygADgQIABJd
+BAgAEjkECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAA
+AAAoAQAjU0NfNTg0OGM5YWRlZjNjNGEwNGJjNzdiMDA0YjhlZWI4YjAAAAUBAAAAABYBABFDb3B5
+cmlnaHQgQCAgMjAyMAAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdv
+cmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcEAQAAAAAAtAAAAM7K774BAAAAkQAAAGxT
+eXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4w
+LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVt
+LlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAGg2AAAA
+AAAAAAAAAII2AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0NgAAAAAAAAAAAAAAAF9Db3JEbGxN
+YWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -5626,7 +5621,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAGg2AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAJQ2AAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -6822,7 +6817,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       DTS:refId="Package\Store Location"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{6137863C-0AA2-4EDC-8D05-AFD1CC27F4B0}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -8623,7 +8617,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       DTS:refId="Package\Subcategory"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{303A974F-B95B-48FA-92A8-B200FA5DAD41}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -9452,7 +9445,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       DTS:refId="Package\Territory Country"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{504F9F96-BDF3-4C28-BD02-1AD3CDAA3531}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -10412,6 +10404,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="140,42.6666666666667"
+          Id="Package\Borrar Dates"
+          TopLeft="63.8888879368703,37.2514626894705" />
+        <NodeLayout
           Size="165.333333333334,42.6666666666667"
           Id="Package\Borrar Employees"
           TopLeft="913.928557809975,66.9223070240574" />
@@ -10432,10 +10428,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Id="Package\Customer Location"
           TopLeft="462.202374065029,235.971182386434" />
         <NodeLayout
-          Size="180,42.6666666666667"
-          Id="Package\Ship-Order-Due Date"
-          TopLeft="74.1666655756888,136.992483423027" />
-        <NodeLayout
           Size="126.666666666667,42.6666666666667"
           Id="Package\Employee"
           TopLeft="941.011890739735,154.501256040935" />
@@ -10443,6 +10435,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Size="116,42.6666666666667"
           Id="Package\Product"
           TopLeft="279.761900593128,277.593990187424" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Ship-Order-Due Date"
+          TopLeft="74.1666655756888,136.992483423027" />
         <NodeLayout
           Size="148,42.6666666666667"
           Id="Package\Store Location"
@@ -10535,7 +10531,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="620.425586807631,193.290729652166">
+          TopLeft="620.425586807631,193.290729652167">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10633,10 +10629,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,42.6666666666667"
-          Id="Package\Borrar Dates"
-          TopLeft="63.8888879368703,37.2514626894705" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="133.88888793687,79.9181293561371">
@@ -10744,182 +10736,172 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package\Customer Location">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="148,42.6666666666667"
-          Id="Package\Customer Location\Sort Customer"
-          TopLeft="262.350427350428,108.504273504274" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="196.666666666667,42.6666666666667"
           Id="Package\Customer Location\Territory Country Source"
           TopLeft="476.239316239316,36.8376068376068" />
         <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\Customer Location\OLE DB Destination"
-          TopLeft="358.461538461538,261.538461538461" />
-        <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\Customer Location\Merge Join"
-          TopLeft="379.017094017094,185.726495726496" />
-        <NodeLayout
           Size="162.666666666667,42.6666666666667"
           Id="Package\Customer Location\Customer Source"
           TopLeft="251.683760683761,36.7264957264958" />
-        <NodeLayout
-          Size="98.6666666666667,42.6666666666667"
-          Id="Package\Customer Location\Sort"
-          TopLeft="530.128205128205,108.504273504274" />
-        <EdgeLayout
-          Id="Package\Customer Location.Paths[Sort Output1]"
-          TopLeft="579.461538461538,151.17094017094">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-113.777777777778,34.5555555555555"
-              Start="0,0"
-              End="-113.777777777778,27.0555555555555">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4850299401197" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4850299401197"
-                    Point2="0,20.4850299401197"
-                    Point3="-4,20.4850299401197" />
-                  <mssgle:LineSegment
-                    End="-109.777777777778,20.4850299401197" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-109.777777777778,20.4850299401197"
-                    Point2="-113.777777777778,20.4850299401197"
-                    Point3="-113.777777777778,24.4850299401197" />
-                  <mssgle:LineSegment
-                    End="-113.777777777778,27.0555555555555" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Customer Location.Paths[Sort Output]"
-          TopLeft="336.350427350428,151.17094017094">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="87.9999999999993,34.5555555555556"
-              Start="0,0"
-              End="87.9999999999993,27.0555555555556">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4850299401198" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4850299401198"
-                    Point2="0,20.4850299401198"
-                    Point3="4,20.4850299401198" />
-                  <mssgle:LineSegment
-                    End="83.9999999999993,20.4850299401198" />
-                  <mssgle:CubicBezierSegment
-                    Point1="83.9999999999993,20.4850299401198"
-                    Point2="87.9999999999993,20.4850299401198"
-                    Point3="87.9999999999993,24.4850299401198" />
-                  <mssgle:LineSegment
-                    End="87.9999999999993,27.0555555555556" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Customer Location.Paths[OLE DB Source Output1]"
-          TopLeft="577.017094017094,79.5042735042735">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.0000000000001"
-              Start="0,0"
-              End="0,21.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Customer Location.Paths[OLE DB Source Output]"
-          TopLeft="334.683760683761,79.3931623931624">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.1111111111111"
-              Start="0,0"
-              End="0,21.6111111111111">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.6111111111111" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Customer Location.Paths[Merge Join Output]"
-          TopLeft="445.405982905983,228.393162393162">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.145299145299"
-              Start="0,0"
-              End="0,25.645299145299">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.645299145299" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <AnnotationLayout
           Text="Preguntar sobre las 19 mil tuplas de resultado"
           ParentId="Package\Customer Location"
           FontInfo="{assembly:Null}"
-          Size="250.666666666667,NaN"
+          Size="250.666666666667,56"
           Id="2c0c52ef-30ea-4b37-8997-caf0d165ecb6"
           TopLeft="547.179487179487,260.051282051282" />
+        <NodeLayout
+          Size="108,42.6666666666667"
+          Id="Package\Customer Location\Sort 1"
+          TopLeft="514,125.333333333333" />
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[OLE DB Source Output]"
+          TopLeft="571.286324786325,79.5042735042735">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.8290598290599"
+              Start="0,0"
+              End="0,38.3290598290599">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.3290598290599" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Customer Location\Sort"
+          TopLeft="284,125.333333333333" />
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[OLE DB Source Output1]"
+          TopLeft="333.175213675214,79.3931623931625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.9401709401709"
+              Start="0,0"
+              End="0,38.4401709401709">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.4401709401709" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Customer Location\Merge Join"
+          TopLeft="370.666666666667,192.666666666667" />
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[Sort Output]"
+          TopLeft="333.333333333333,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.6666666666667,24.6666666666667"
+              Start="0,0"
+              End="82.6666666666667,17.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.622754491018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.622754491018"
+                    Point2="0,14.622754491018"
+                    Point3="4,14.622754491018" />
+                  <mssgle:LineSegment
+                    End="78.6666666666667,14.622754491018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.6666666666667,14.622754491018"
+                    Point2="82.6666666666667,14.622754491018"
+                    Point3="82.6666666666667,18.622754491018" />
+                  <mssgle:LineSegment
+                    End="82.6666666666667,17.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[Sort Output1]"
+          TopLeft="568,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-110.666666666667,24.6666666666667"
+              Start="0,0"
+              End="-110.666666666667,17.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.622754491018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.622754491018"
+                    Point2="0,14.622754491018"
+                    Point3="-4,14.622754491018" />
+                  <mssgle:LineSegment
+                    End="-106.666666666667,14.622754491018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-106.666666666667,14.622754491018"
+                    Point2="-110.666666666667,14.622754491018"
+                    Point3="-110.666666666667,18.622754491018" />
+                  <mssgle:LineSegment
+                    End="-110.666666666667,17.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.666666666667,44"
+          Id="Package\Customer Location\OLE DB Destination"
+          TopLeft="344,281.333333333333" />
+        <EdgeLayout
+          Id="Package\Customer Location.Paths[Merge Join Output]"
+          TopLeft="434,235.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.9999999999999"
+              Start="0,0"
+              End="0,38.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -10937,245 +10919,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Customer Location\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Customer Location\Customer Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Ship-Order-Due Date">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\Ship-Order-Due Date\Order Destination"
-          TopLeft="64.2857133277821,297.894741588777" />
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Ship-Order-Due Date\OLE DB Source"
-          TopLeft="232.142853683659,3.5527136788005E-15" />
-        <NodeLayout
-          Size="204,42.6666666666667"
-          Id="Package\Ship-Order-Due Date\Day-Month-Year Numbers"
-          TopLeft="210.11904448803,73.6340865990115" />
-        <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\Ship-Order-Due Date\Day-Month Names"
-          TopLeft="229.761901338186,144.912282909509" />
-        <EdgeLayout
-          Id="Package\Ship-Order-Due Date.Paths[Derived Column Output]"
-          TopLeft="312.940472913108,116.300753265678">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.6115296438303"
-              Start="0,0"
-              End="0,21.1115296438303">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.1115296438303" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Ship-Order-Due Date.Paths[OLE DB Source Output]"
-          TopLeft="310.797615752511,42.6666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.9674199323449"
-              Start="0,0"
-              End="0,23.4674199323449">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.4674199323449" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="Solo hay 1128 tuplas únicas para las fechas en Sales.SalesOrderHeader. &#xD;&#xA;Si no se hace el DISTINCT, hay 31465, ¿hacemos el DISTINCT o nos&#xD;&#xA;dejamos tuplas repetidas?"
-          ParentId="Package\Ship-Order-Due Date"
-          FontInfo="{assembly:Null}"
-          Size="406.666666666667,72"
-          Id="7bad853b-8d0f-42da-92ae-79cced2b0ad5"
-          TopLeft="410.714279594166,63.8596503248065" />
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Ship-Order-Due Date\Due Destination"
-          TopLeft="242.857139238289,292.781958677196" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Ship-Order-Due Date\Ship Destination"
-          TopLeft="409.523803421429,295.889728051694" />
-        <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Ship-Order-Due Date\Multicast"
-          TopLeft="255.952377138393,218.345866243878" />
-        <EdgeLayout
-          Id="Package\Ship-Order-Due Date.Paths[OrderOutput]"
-          TopLeft="315.190472571623,187.578949576175">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.7669166677028"
-              Start="0,0"
-              End="0,23.2669166677028">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.2669166677028" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Ship-Order-Due Date.Paths[Multicast Output 1]"
-          TopLeft="344.952377138393,261.012532910545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="143.238092949702,34.8771951411493"
-              Start="0,0"
-              End="143.238092949702,27.3771951411493">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.12576318527415" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.12576318527415"
-                    Point2="0,12.1257631852741"
-                    Point3="4,12.1257631852741" />
-                  <mssgle:LineSegment
-                    End="139.238092949702,12.1257631852741" />
-                  <mssgle:CubicBezierSegment
-                    Point1="139.238092949702,12.1257631852741"
-                    Point2="143.238092949702,12.1257631852741"
-                    Point3="143.238092949702,16.1257631852741" />
-                  <mssgle:LineSegment
-                    End="143.238092949702,27.3771951411493" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Ship-Order-Due Date.Paths[Multicast Output 2]"
-          TopLeft="318.738091521675,261.012532910545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.7694257666513"
-              Start="0,0"
-              End="0,24.2694257666513">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.2694257666513" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Ship-Order-Due Date.Paths[Multicast Output 3]"
-          TopLeft="288.285710471727,261.012532910545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-142.666663810611,36.8822086782325"
-              Start="0,0"
-              End="-142.666663810611,29.3822086782325">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.82284674476182" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.82284674476182"
-                    Point2="0,12.8228467447618"
-                    Point3="-4,12.8228467447618" />
-                  <mssgle:LineSegment
-                    End="-138.666663810611,12.8228467447618" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-138.666663810611,12.8228467447618"
-                    Point2="-142.666663810611,12.8228467447618"
-                    Point3="-142.666663810611,16.8228467447618" />
-                  <mssgle:LineSegment
-                    End="-142.666663810611,29.3822086782325" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Ship-Order-Due Date\Order Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Ship-Order-Due Date\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11746,6 +11490,257 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Product\Product Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Ship-Order-Due Date">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Ship-Order-Due Date\Ship Destination"
+          TopLeft="409.523803421429,295.889728051694" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Ship-Order-Due Date\OLE DB Source"
+          TopLeft="232.142853683659,3.5527136788005E-15" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Ship-Order-Due Date\Multicast"
+          TopLeft="255.952377138393,218.345866243878" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Ship-Order-Due Date\Due Destination"
+          TopLeft="242.857139238289,292.781958677196" />
+        <NodeLayout
+          Size="204,42.6666666666667"
+          Id="Package\Ship-Order-Due Date\Day-Month-Year Numbers"
+          TopLeft="210.11904448803,73.6340865990115" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Ship-Order-Due Date\Order Destination"
+          TopLeft="64.2857133277821,297.894741588777" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\Ship-Order-Due Date\Day-Month Names"
+          TopLeft="224.761901412692,139.438598595954" />
+        <EdgeLayout
+          Id="Package\Ship-Order-Due Date.Paths[OrderOutput]"
+          TopLeft="312.690472608876,182.105265262621">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.2406009812572"
+              Start="0,0"
+              End="0,28.7406009812572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.7406009812572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ship-Order-Due Date.Paths[OLE DB Source Output]"
+          TopLeft="310.797615752511,42.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.9674199323449"
+              Start="0,0"
+              End="0,23.4674199323449">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4674199323449" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ship-Order-Due Date.Paths[Multicast Output 3]"
+          TopLeft="288.285710471727,261.012532910545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-142.666663810611,36.8822086782325"
+              Start="0,0"
+              End="-142.666663810611,29.3822086782325">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.82284674476182" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.82284674476182"
+                    Point2="0,12.8228467447618"
+                    Point3="-4,12.8228467447618" />
+                  <mssgle:LineSegment
+                    End="-138.666663810611,12.8228467447618" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-138.666663810611,12.8228467447618"
+                    Point2="-142.666663810611,12.8228467447618"
+                    Point3="-142.666663810611,16.8228467447618" />
+                  <mssgle:LineSegment
+                    End="-142.666663810611,29.3822086782325" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ship-Order-Due Date.Paths[Multicast Output 2]"
+          TopLeft="318.738091521675,261.012532910545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.7694257666513"
+              Start="0,0"
+              End="0,24.2694257666513">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2694257666513" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ship-Order-Due Date.Paths[Multicast Output 1]"
+          TopLeft="344.952377138393,261.012532910545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143.238092949702,34.8771951411493"
+              Start="0,0"
+              End="143.238092949702,27.3771951411493">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.12576318527415" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.12576318527415"
+                    Point2="0,12.1257631852741"
+                    Point3="4,12.1257631852741" />
+                  <mssgle:LineSegment
+                    End="139.238092949702,12.1257631852741" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139.238092949702,12.1257631852741"
+                    Point2="143.238092949702,12.1257631852741"
+                    Point3="143.238092949702,16.1257631852741" />
+                  <mssgle:LineSegment
+                    End="143.238092949702,27.3771951411493" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ship-Order-Due Date.Paths[Derived Column Output]"
+          TopLeft="310.440472950361,116.300753265678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.137845330276"
+              Start="0,0"
+              End="0,15.637845330276">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.637845330276" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Solo hay 1128 tuplas únicas para las fechas en Sales.SalesOrderHeader. &#xA;Si no se hace el DISTINCT, hay 31465, ¿hacemos el DISTINCT o nos&#xA;dejamos tuplas repetidas?"
+          ParentId="Package\Ship-Order-Due Date"
+          FontInfo="{assembly:Null}"
+          Size="406.666666666667,72"
+          Id="7bad853b-8d0f-42da-92ae-79cced2b0ad5"
+          TopLeft="424.047612728817,85.7543875790259" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ship-Order-Due Date\Ship Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ship-Order-Due Date\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ship-Order-Due Date\Due Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ship-Order-Due Date\Order Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12661,20 +12656,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Ship-Order-Due Date\Due Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Ship-Order-Due Date\Ship Destination">
+    design-time-name="Package\Customer Location\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
