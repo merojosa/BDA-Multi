@@ -88,28 +88,35 @@ CREATE TABLE DimShipDate
 
 CREATE TABLE DimCategory(
     CategoryDimKey INT IDENTITY(1,1) PRIMARY KEY,
+	CategoryId INT UNIQUE,
     CategoryName nvarchar(50),
 );
 
 
 CREATE TABLE DimSubCategory (
-    SubCategoryDimID INT IDENTITY (1,1) NOT NULL PRIMARY KEY,
-    CategoryDimKey INT NULL,
+    SubCategoryDimKey INT IDENTITY (1,1) PRIMARY KEY,
+    SubCategoryDimID INT NOT NULL,
     SubCategoryName NVARCHAR(50),
-    CONSTRAINT FK_DimSubCategory FOREIGN KEY (CategoryDimKey)
+	ProductCategoryFKey INT
+
+    CONSTRAINT FK_DimSubCategory FOREIGN KEY (ProductCategoryFKey)
 	REFERENCES DimCategory(CategoryDimKey)
 );
 
 CREATE TABLE DimProduct(
     ProductKey INT IDENTITY(1,1) NOT NULL,
-    ProductName nvarchar(25) NOT NULL,
-    SubCategoryDimID INT NULL,
+	ProductId INT UNIQUE,
+    ProductName NVARCHAR(50) NOT NULL,
+    SubCategoryDimKey INT NULL,
     SizeName nvarchar(50) NULL,
     StyleName nchar(2) NULL,
-    ColorName nvarchar(15) NOT NULL,
+    ColorName nvarchar(15) NULL,
     ClassName nchar(2) NULL,
+	ModelId INT,
+
     ProductModelName nvarchar(50) NULL,
     PRIMARY KEY (ProductKey),
-    CONSTRAINT FK_DimProduct FOREIGN KEY (SubCategoryDimID) 
-	REFERENCES DimSubCategory(SubCategoryDimID)
+
+    CONSTRAINT FK_DimProduct FOREIGN KEY (SubCategoryDimKey) 
+	REFERENCES DimSubCategory(SubCategoryDimKey)
 );
