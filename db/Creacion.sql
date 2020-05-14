@@ -126,7 +126,7 @@ CREATE TABLE FactTable(
 	CustomerLocationFKey INT NOT NULL,
 	StoreLocationFKey INT NOT NULL,
 	ProductFKey INT NOT NULL,
-	EmployeeFKey INT NOT NULL,
+	EmployeeFKey INT NOT NULL UNIQUE,
 	DueDateFKey INT NOT NULL,
 	ShipDateFKey INT NOT NULL,
 	OrderDateFKey INT NOT NULL,
