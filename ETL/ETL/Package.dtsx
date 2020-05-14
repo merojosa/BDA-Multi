@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="160"
-  DTS:VersionGUID="{6B359EAD-F443-4DA5-9A23-A4C9C9F3175B}">
+  DTS:VersionBuild="161"
+  DTS:VersionGUID="{4EE76F53-E5A2-4D4A-BF3B-DF39857D0B44}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADWUwXQwBAxpMNngBVjxsro1JnTtA/KbOOakfwfUwMmYgAAAAAOgAAAAAIAACAAAACa8US2peLMevtgR0+uO8Wc+E1luJrsbAKr5QTXv91bGRAAAAB8qPHMZCb4s2ldSF/VhWQQQAAAANMajla/8GvbNQlID2vh77mHiymx24c7GeWJDsSsllrtImt2Waotn2MqaOklAe+vL6mFsUXjw1FXpaMTsmHGqxQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADLhp262gNJQU4BKW7HWzMUnBRkyePo5SCLgsDAsu2OjQAAAAAOgAAAAAIAACAAAACH5rUIwzXTunDCF4h5EdN0DP8VimqrXw1gbbgLWsekBhAAAAB/Z5JWbfL1Lg2+xsFhccUdQAAAAA/rHstOUKkeO2FRUDdkKUsdDhKZHoIIC1yw1K4iCF7Jvl+y4Mo0pLpVnAlnE8zSukzkM7uStCVnqD0dT9Br0ZY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -52,78 +52,12 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACmRdEQFIfRCEyFGpYi6aRGCcbIHFzUF1o70IxmIQ8lpQAAAAAOgAAAAAIAACAAAABEjnyN1Ph8vd4QxSobzUak1GJaHrATC9H+B1v7xPUnIhAAAADHhxz8TVgPf2scEgM2MVkjQAAAANni84Izi9vzJTrsduMT6hpvWL+06sXIgGS3ZSk1GFSpyZknHZDfT7C7/SQMW97xcHPOXyPgRHqw2fkYvTyLehA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC+k1Q3LJ1R6VjCv1g5tl02k4XToZ1ld9MHQMDvZ6EOxQAAAAAOgAAAAAIAACAAAAAOIJMFQy6zDl0vrjESHiSCq1pmhq96MhqNkNtjcuCgLBAAAADZc/Jym5z537f8itAjmKioQAAAAP7yj5tEQ2XmWazNzOTLlE7NywuUbPvsM6XA6Rf99lc3dMytJzYLa9WMROPYLSJEAMin66WkXGmRJks00eAadMo</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{55900F2C-02C7-41B3-A764-63F222F69579}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="OrderDayName">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{97D78F0E-1C98-4661-974C-060B5B6D79E8}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="OrderDayNumber">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{CDE8B7FF-4CEF-45F8-A2E7-42D27AB55267}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="OrderMonthName">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{5B30B595-3B94-46C7-AC5C-7EE5C5852885}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="OrderMonthNumber">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{06D9B28F-1B0B-4D40-B950-769EDEF74D45}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="OrderYearNumber">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{77B67102-4340-4C68-8FCA-24D382A120B1}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="ResultSet">
-      <DTS:VariableValue
-        DTS:DataSubType="ManagedSerializable"
-        DTS:DataType="13">
-        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-          <SOAP-ENV:Body>
-            <xsd:anyType
-              id="ref-1"></xsd:anyType>
-          </SOAP-ENV:Body>
-        </SOAP-ENV:Envelope>
-      </DTS:VariableValue>
-    </DTS:Variable>
-  </DTS:Variables>
+  <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Borrar Datos"
