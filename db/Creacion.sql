@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS FactTable;
 DROP TABLE IF EXISTS DimProduct;
 DROP TABLE IF EXISTS DimEmployee;
 DROP TABLE IF EXISTS DimStoreLocation;
@@ -119,4 +120,40 @@ CREATE TABLE DimProduct(
 
     CONSTRAINT FK_DimProduct FOREIGN KEY (SubCategoryDimKey) 
 	REFERENCES DimSubCategory(SubCategoryDimKey)
+);
+
+CREATE TABLE FactTable(
+	CustomerLocationFKey INT NOT NULL,
+	StoreLocationFKey INT NOT NULL,
+	ProductFKey INT NOT NULL,
+	EmployeeFKey INT NOT NULL,
+	DueDateFKey INT NOT NULL,
+	ShipDateFKey INT NOT NULL,
+	OrderDateFKey INT NOT NULL,
+	UnitPrice MONEY NOT NULL,
+	Quantity INT NOT NULL,
+
+	CONSTRAINT PK_FactTable PRIMARY KEY(CustomerLocationFKey, StoreLocationFKey, ProductFKey,
+				EmployeeFKey, DueDateFKey, ShipDateFKey, OrderDateFKey),
+
+	CONSTRAINT FK_FTCustomer FOREIGN KEY (CustomerLocationFKey)
+	REFERENCES DimCustomerLocation(CustomerKey),
+
+	CONSTRAINT FK_FTStore FOREIGN KEY (StoreLocationFKey)
+	REFERENCES DimStoreLocation(StoreKey),
+
+	CONSTRAINT FK_FTProduct FOREIGN KEY (ProductFKey)
+	REFERENCES DimProduct(ProductKey),
+
+	CONSTRAINT FK_FTEmployee FOREIGN KEY (EmployeeFKey)
+	REFERENCES DimEmployee(EmployeeKey),
+
+	CONSTRAINT FK_FTDueDate FOREIGN KEY (DueDateFKey)
+	REFERENCES DimDueDate(DueDateKey),
+
+	CONSTRAINT FK_FTShipDate FOREIGN KEY (ShipDateFKey)
+	REFERENCES DimShipDate(ShipDateKey),
+
+	CONSTRAINT FK_FTOrderDate FOREIGN KEY (OrderDateFKey)
+	REFERENCES DimOrderDate(OrderDateKey)
 );
