@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{0A0FEBA0-0DFB-4A57-98EA-AAE77A8E50D8}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{3DD06303-FFF9-4123-BB5F-60EFADCEAD34}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAABxnoL40c8NCsTtc13o0w+FCecj7qbTRRN/NpXlcOLbQAAAAAOgAAAAAIAACAAAADD6/H/HbJaUjQhq8o6Sgq4v/OTw/8X21TYibzn3y4dhhAAAADq+ZhMAc1s4fGDNveLZ84hQAAAAL96V4IHmJNxSw9SkvfyvC18to4QPQ8s4gD6g9F910eE9yszNT+V8VUurCsckwtA4ChsbbnP3Rp29VL2pX/EJHQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADNFOthx9HcHXZcWd5iKGWnZ3v7l4IQkt6wpsCfIswIsAAAAAAOgAAAAAIAACAAAABmF/gu4qHgt5xIBkuDEtU2+5gIZwR0HjtIZIFoEg+O9xAAAADPYKIoVkprweD2YZX4GTzdQAAAACx5KubH60dTTP+MckdGGZvJdFddrz8waJ4tffBg2gOEyRBHzlyhTSu2NbSLuSwVyjyjPNfPJO9kW0x+FHEEvZo</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -52,7 +52,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABNJqGjQVPkIP7Baghcaig/xPbWpSPKhNmZ4oFqnG+y9gAAAAAOgAAAAAIAACAAAACeMOYZWqznMuTgYEArEitromXOh3dI2wz0nuDf4QtPaRAAAABNJSOSlWhPphk/MZlGh8/mQAAAAHtAwsK4DjGRTIMmXPS4HwXdnwWXTXbkZIZm3Dvh36mDG/1Sk5QzFEiZTU2aJPwlaBKirjzJlCe3hMJGfV72uIc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABpzJx1RO2FrZQ3uy0ZSyNsnxGFsP8r332CsOuZ4OusWgAAAAAOgAAAAAIAACAAAADtMGxWv9VOGKSHn4lLyejNkV3x0RxBCas6EcXT6yy4GBAAAACyYEnM+5Y/JdBOTO5qWZuwQAAAAJmFuxecRlq3/cnnLbt6L2xNBszND5DXye82/N7PXYiA16VBZaIXs/tT9sabiZMPz9a+cEPs5bNPysh4WZ372/4</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -91,6 +91,23 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BF81B78D-94E3-4E0F-9751-8FD0432A6CE7}"
           SQLTask:SqlStatementSource="DELETE FROM DimEmployee" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Borrar Fact Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{B83ED35C-4A80-4A58-B702-1B9233425E52}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Borrar Fact Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BF81B78D-94E3-4E0F-9751-8FD0432A6CE7}"
+          SQLTask:SqlStatementSource="DELETE FROM FactTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -4229,7 +4246,7 @@ where [refTable].[CustomerID] = ?</property>
                 <input
                   refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -4238,55 +4255,62 @@ where [refTable].[CustomerID] = ?</property>
                       cachedDataType="cy"
                       cachedName="UnitPrice"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
-                      lineageId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[UnitPrice]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTCustomerKey]"
                       cachedDataType="i4"
                       cachedName="FTCustomerKey"
+                      cachedSortKeyPosition="7"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerLocationFKey]"
-                      lineageId="Package\Fact Table\Lookup - Customer Location.Outputs[Lookup Match Output].Columns[FTCustomerKey]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTCustomerKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTStoreKey]"
                       cachedDataType="i4"
                       cachedName="FTStoreKey"
+                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreLocationFKey]"
-                      lineageId="Package\Fact Table\Lookup - Store Location.Outputs[Lookup Match Output].Columns[FTStoreKey]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTStoreKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTProductKey]"
                       cachedDataType="i4"
                       cachedName="FTProductKey"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductFKey]"
-                      lineageId="Package\Fact Table\Lookup - Product.Outputs[Lookup Match Output].Columns[FTProductKey]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTProductKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTEmployeeKey]"
                       cachedDataType="i4"
                       cachedName="FTEmployeeKey"
+                      cachedSortKeyPosition="3"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeFKey]"
-                      lineageId="Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output].Columns[FTEmployeeKey]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTEmployeeKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTDueDateKey]"
                       cachedDataType="i4"
                       cachedName="FTDueDateKey"
+                      cachedSortKeyPosition="6"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DueDateFKey]"
-                      lineageId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output].Columns[FTDueDateKey]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTDueDateKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTShipDateKey]"
                       cachedDataType="i4"
                       cachedName="FTShipDateKey"
+                      cachedSortKeyPosition="4"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipDateFKey]"
-                      lineageId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output].Columns[FTShipDateKey]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTShipDateKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTOrderDateKey]"
                       cachedDataType="i4"
                       cachedName="FTOrderDateKey"
+                      cachedSortKeyPosition="5"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDateFKey]"
-                      lineageId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output].Columns[FTOrderDateKey]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTOrderDateKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderQty]"
                       cachedDataType="i2"
                       cachedName="OrderQty"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
-                      lineageId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[OrderQty]" />
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderQty]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4811,6 +4835,834 @@ where [refTable].[CustomerID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Fact Table\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Fact Table\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[SalesOrderID]"
+                      cachedDataType="i4"
+                      cachedName="SalesOrderID"
+                      lineageId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[SalesOrderID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[OrderQty]"
+                      cachedDataType="i2"
+                      cachedName="OrderQty"
+                      lineageId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[OrderQty]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[ProductID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[OrderDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[DueDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DueDate"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[DueDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[ShipDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ShipDate"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[ShipDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[TerritoryID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[StoreID]"
+                      cachedDataType="i4"
+                      cachedName="StoreID"
+                      lineageId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output].Columns[StoreID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTProductKey]"
+                      cachedDataType="i4"
+                      cachedName="FTProductKey"
+                      lineageId="Package\Fact Table\Lookup - Product.Outputs[Lookup Match Output].Columns[FTProductKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTStoreKey]"
+                      cachedDataType="i4"
+                      cachedName="FTStoreKey"
+                      lineageId="Package\Fact Table\Lookup - Store Location.Outputs[Lookup Match Output].Columns[FTStoreKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTEmployeeKey]"
+                      cachedDataType="i4"
+                      cachedName="FTEmployeeKey"
+                      lineageId="Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output].Columns[FTEmployeeKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTCustomerKey]"
+                      cachedDataType="i4"
+                      cachedName="FTCustomerKey"
+                      lineageId="Package\Fact Table\Lookup - Customer Location.Outputs[Lookup Match Output].Columns[FTCustomerKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">7</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[ShipDayNumber]"
+                      cachedDataType="i4"
+                      cachedName="ShipDayNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipDayNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[ShipMonthNumber]"
+                      cachedDataType="i4"
+                      cachedName="ShipMonthNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipMonthNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[ShipYearNumber]"
+                      cachedDataType="i4"
+                      cachedName="ShipYearNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipYearNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[DueDayNumber]"
+                      cachedDataType="i4"
+                      cachedName="DueDayNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueDayNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[DueMonthNumber]"
+                      cachedDataType="i4"
+                      cachedName="DueMonthNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueMonthNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[DueYearNumber]"
+                      cachedDataType="i4"
+                      cachedName="DueYearNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueYearNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[OrderDayNumber]"
+                      cachedDataType="i4"
+                      cachedName="OrderDayNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderDayNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[OrderMonthNumber]"
+                      cachedDataType="i4"
+                      cachedName="OrderMonthNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderMonthNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[OrderYearNumber]"
+                      cachedDataType="i4"
+                      cachedName="OrderYearNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderYearNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTShipDateKey]"
+                      cachedDataType="i4"
+                      cachedName="FTShipDateKey"
+                      lineageId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output].Columns[FTShipDateKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTDueDateKey]"
+                      cachedDataType="i4"
+                      cachedName="FTDueDateKey"
+                      lineageId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output].Columns[FTDueDateKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">6</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTOrderDateKey]"
+                      cachedDataType="i4"
+                      cachedName="FTOrderDateKey"
+                      lineageId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output].Columns[FTOrderDateKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Table\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[SalesOrderID]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[SalesOrderID]"
+                      name="SalesOrderID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[SalesOrderID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderQty]"
+                      dataType="i2"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderQty]"
+                      name="OrderQty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[OrderQty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ProductID]"
+                      name="ProductID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[ProductID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderDate]"
+                      name="OrderDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[OrderDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[DueDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[DueDate]"
+                      name="DueDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[DueDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ShipDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ShipDate]"
+                      name="ShipDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[ShipDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[TerritoryID]"
+                      name="TerritoryID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[EmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[EmployeeID]"
+                      name="EmployeeID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[EmployeeID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[StoreID]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[StoreID]"
+                      name="StoreID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output].Columns[StoreID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTProductKey]"
+                      name="FTProductKey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup - Product.Outputs[Lookup Match Output].Columns[FTProductKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTStoreKey]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTStoreKey]"
+                      name="FTStoreKey"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup - Store Location.Outputs[Lookup Match Output].Columns[FTStoreKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTEmployeeKey]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTEmployeeKey]"
+                      name="FTEmployeeKey"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output].Columns[FTEmployeeKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTCustomerKey]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTCustomerKey]"
+                      name="FTCustomerKey"
+                      sortKeyPosition="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup - Customer Location.Outputs[Lookup Match Output].Columns[FTCustomerKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ShipDayNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ShipDayNumber]"
+                      name="ShipDayNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipDayNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ShipMonthNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ShipMonthNumber]"
+                      name="ShipMonthNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipMonthNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ShipYearNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[ShipYearNumber]"
+                      name="ShipYearNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipYearNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[DueDayNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[DueDayNumber]"
+                      name="DueDayNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueDayNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[DueMonthNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[DueMonthNumber]"
+                      name="DueMonthNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueMonthNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[DueYearNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[DueYearNumber]"
+                      name="DueYearNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueYearNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderDayNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderDayNumber]"
+                      name="OrderDayNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderDayNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderMonthNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderMonthNumber]"
+                      name="OrderMonthNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderMonthNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderYearNumber]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[OrderYearNumber]"
+                      name="OrderYearNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderYearNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTShipDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTShipDateKey]"
+                      name="FTShipDateKey"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output].Columns[FTShipDateKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTDueDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTDueDateKey]"
+                      name="FTDueDateKey"
+                      sortKeyPosition="6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output].Columns[FTDueDateKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTOrderDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTOrderDateKey]"
+                      name="FTOrderDateKey"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output].Columns[FTOrderDateKey]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -4855,19 +5707,24 @@ where [refTable].[CustomerID] = ?</property>
               startId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact Table.Paths[Lookup Match Output7]"
-              endId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Lookup Match Output"
-              startId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fact Table.Paths[Lookup Match Output8]"
               endId="Package\Fact Table\Conditional Split.Inputs[Conditional Split Input]"
               name="Lookup Match Output"
               startId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Table.Paths[Lookup Match Output8]"
+              endId="Package\Fact Table\Sort.Inputs[Sort Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact Table.Paths[OLE DB Source Output]"
               endId="Package\Fact Table\Lookup AW.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fact Table.Paths[Sort Output]"
+              endId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Fact Table\Sort.Outputs[Sort Output]" />
             <path
               refId="Package\Fact Table.Paths[StoreNotNull]"
               endId="Package\Fact Table\Lookup - Product.Inputs[Lookup Input]"
@@ -14613,6 +15470,38 @@ FROM Sales.SalesOrderHeader</property>
       DTS:ObjectName="Constraint 12"
       DTS:To="Package\Fact Table" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{49661F9C-7C44-453A-B4F1-11B262B0167F}"
+      DTS:From="Package\Borrar Fact Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\Borrar Products" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 14]"
+      DTS:CreationName=""
+      DTS:DTSID="{FD55D1D9-623A-4340-8F3C-6CD302571373}"
+      DTS:From="Package\Borrar Fact Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 14"
+      DTS:To="Package\Borrar Location" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 15]"
+      DTS:CreationName=""
+      DTS:DTSID="{3B36B5CB-37F5-41C7-88A4-6130570E9702}"
+      DTS:From="Package\Borrar Fact Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 15"
+      DTS:To="Package\Borrar Employees" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 16]"
+      DTS:CreationName=""
+      DTS:DTSID="{EAFB5FC4-974F-48F6-A743-0847B485C9CF}"
+      DTS:From="Package\Borrar Fact Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 16"
+      DTS:To="Package\Borrar Dates" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{87EB6F62-092C-4DFD-ABB1-897AB34B3E55}"
@@ -14692,58 +15581,58 @@ FROM Sales.SalesOrderHeader</property>
         <NodeLayout
           Size="140,42.6666666666667"
           Id="Package\Borrar Dates"
-          TopLeft="100.555554057162,171.356728371564" />
+          TopLeft="100.555554057162,245.391817258519" />
         <NodeLayout
           Size="165.333333333334,42.6666666666667"
           Id="Package\Borrar Employees"
-          TopLeft="858.095225308623,193.729326954745" />
+          TopLeft="858.095225308623,267.7644158417" />
         <NodeLayout
           Size="152,42.6666666666667"
           Id="Package\Borrar Location"
-          TopLeft="578.764872328113,91.7117792894795" />
+          TopLeft="578.764872328113,165.746868176434" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Borrar Products"
-          TopLeft="302.619043109672,47.1979955173297" />
+          TopLeft="302.619043109672,121.233084404285" />
         <NodeLayout
           Size="122.666666666667,42.6666666666667"
           Id="Package\Category"
-          TopLeft="322.261899959828,118.726819277344" />
+          TopLeft="322.261899959828,192.761908164299" />
         <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\Customer Location"
-          TopLeft="487.202373692501,269.725568986689" />
+          TopLeft="487.202373692501,343.760657873644" />
         <NodeLayout
           Size="126.666666666667,42.6666666666667"
           Id="Package\Employee"
-          TopLeft="885.178558238383,281.308275971622" />
+          TopLeft="885.178558238383,355.343364858577" />
         <NodeLayout
           Size="129.333333333334,42.6666666666667"
           Id="Package\Fact Table"
-          TopLeft="512.499992363155,440.631587241165" />
+          TopLeft="512.499992363155,514.66667612812" />
         <NodeLayout
           Size="116,42.6666666666667"
           Id="Package\Product"
-          TopLeft="327.261899885323,275.769428749572" />
+          TopLeft="327.261899885323,349.804517636527" />
         <NodeLayout
           Size="180,42.6666666666667"
           Id="Package\Ship-Order-Due Date"
-          TopLeft="85.8333320685085,270.590926483495" />
+          TopLeft="85.8333320685085,344.62601537045" />
         <NodeLayout
           Size="148,42.6666666666667"
           Id="Package\Store Location"
-          TopLeft="679.285704163569,274.335844762689" />
+          TopLeft="679.285704163569,348.370933649644" />
         <NodeLayout
           Size="140,42.6666666666667"
           Id="Package\Subcategory"
-          TopLeft="313.333328664303,196.270680386038" />
+          TopLeft="313.333328664303,270.305769272993" />
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Territory Country"
-          TopLeft="577.425586633784,169.781958082942" />
+          TopLeft="577.425586633784,243.817046969897" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="944.636891773498,236.395993621411">
+          TopLeft="944.636891773498,310.431082508366">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14765,7 +15654,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="682.758919967118,212.448624749608">
+          TopLeft="682.758919967118,286.483713636563">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14799,7 +15688,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="574.517849694494,312.392235653356">
+          TopLeft="574.517849694494,386.427324540311">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14821,7 +15710,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="753.285704163569,317.002511429356">
+          TopLeft="753.285704163569,391.037600316311">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14855,7 +15744,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="948.511891571716,323.974942638289">
+          TopLeft="948.511891571716,398.010031525244">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14889,7 +15778,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="656.095229480949,134.378445956146">
+          TopLeft="656.095229480949,208.413534843101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14911,7 +15800,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="632.092253300451,212.448624749608">
+          TopLeft="632.092253300451,286.483713636563">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14945,7 +15834,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="383.464280978732,161.393485944011">
+          TopLeft="383.464280978732,235.428574830966">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14967,7 +15856,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="384.297614274813,238.937347052705">
+          TopLeft="384.297614274813,312.97243593966">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14989,7 +15878,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="381.773804868083,89.8646621839964">
+          TopLeft="381.773804868083,163.899751070951">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15011,7 +15900,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="173.194443062835,214.023395038231">
+          TopLeft="173.194443062835,288.058483925186">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15033,7 +15922,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="175.833332068509,313.257593150161">
+          TopLeft="175.833332068509,387.292682037116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15067,7 +15956,7 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="385.261899885323,318.436095416239">
+          TopLeft="385.261899885323,392.471184303194">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15091,6 +15980,146 @@ FROM Sales.SalesOrderHeader</property>
                     Point3="171.682536922276,76.4213607353433" />
                   <mssgle:LineSegment
                     End="171.682536922276,114.695491824926" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Borrar Fact Table"
+          TopLeft="425.833326987922,0.912280718925828" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="491.699993654589,43.5789473855925">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111.747617211584,77.6541370186922"
+              Start="0,0"
+              End="-111.747617211584,70.1541370186922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7474127601757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.7474127601757"
+                    Point2="0,34.7474127601757"
+                    Point3="-4,34.7474127601757" />
+                  <mssgle:LineSegment
+                    End="-107.747617211584,34.7474127601757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107.747617211584,34.7474127601757"
+                    Point2="-111.747617211584,34.7474127601757"
+                    Point3="-111.747617211584,38.7474127601757" />
+                  <mssgle:LineSegment
+                    End="-111.747617211584,70.1541370186922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="522.633326987922,43.5789473855925">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132.131545340191,122.167920790842"
+              Start="0,0"
+              End="132.131545340191,114.667920790842">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.6657181799601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.6657181799601"
+                    Point2="0,54.6657181799601"
+                    Point3="4,54.6657181799601" />
+                  <mssgle:LineSegment
+                    End="128.131545340191,54.6657181799601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="128.131545340191,54.6657181799601"
+                    Point2="132.131545340191,54.6657181799601"
+                    Point3="132.131545340191,58.6657181799601" />
+                  <mssgle:LineSegment
+                    End="132.131545340191,114.667920790842" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 15]"
+          TopLeft="553.566660321256,43.5789473855925">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="387.195231654034,224.185468456107"
+              Start="0,0"
+              End="387.195231654034,216.685468456107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.3584779076837" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.3584779076837"
+                    Point2="0,67.3584779076837"
+                    Point3="4,67.3584779076837" />
+                  <mssgle:LineSegment
+                    End="383.195231654034,67.3584779076837" />
+                  <mssgle:CubicBezierSegment
+                    Point1="383.195231654034,67.3584779076837"
+                    Point2="387.195231654034,67.3584779076837"
+                    Point3="387.195231654034,71.3584779076837" />
+                  <mssgle:LineSegment
+                    End="387.195231654034,216.685468456107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="460.766660321256,43.5789473855925">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-290.211106264094,201.812869872926"
+              Start="0,0"
+              End="-290.211106264094,194.312869872926">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.6364356728288" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56.6364356728288"
+                    Point2="0,60.6364356728288"
+                    Point3="-4,60.6364356728288" />
+                  <mssgle:LineSegment
+                    End="-286.211106264094,60.6364356728288" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-286.211106264094,60.6364356728288"
+                    Point2="-290.211106264094,60.6364356728288"
+                    Point3="-290.211106264094,64.6364356728288" />
+                  <mssgle:LineSegment
+                    End="-290.211106264094,194.312869872926" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15653,21 +16682,21 @@ FROM Sales.SalesOrderHeader</property>
         <NodeLayout
           Size="135.333333333334,42.6666666666667"
           Id="Package\Fact Table\Lookup AW"
-          TopLeft="288.51190068626,140.263160534843" />
+          TopLeft="288.51190068626,129.152049423732" />
         <EdgeLayout
           Id="Package\Fact Table.Paths[OLE DB Source Output]"
           TopLeft="357.726682684894,91.3609031847357">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.9022573501073"
+              EndConnector="0,37.7911462389962"
               Start="0,0"
-              End="0,41.4022573501073">
+              End="0,30.2911462389962">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.4022573501073" />
+                    End="0,30.2911462389962" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15750,65 +16779,77 @@ FROM Sales.SalesOrderHeader</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output]"
-          TopLeft="356.178567352927,182.92982720151">
+          TopLeft="356.178567352927,171.818716090399">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-169.416666635622,52.5380134774409"
+              EndConnector="-169.416666635622,63.649124588552"
               Start="0,0"
-              End="-169.416666635622,45.0380134774409">
+              End="-169.416666635622,56.149124588552">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.2690067387204" />
+                    End="0,27.824562294276" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.2690067387204"
-                    Point2="0,26.2690067387204"
-                    Point3="-4,26.2690067387204" />
+                    Point1="0,27.824562294276"
+                    Point2="0,31.824562294276"
+                    Point3="-4,31.824562294276" />
                   <mssgle:LineSegment
-                    End="-165.416666635622,26.2690067387204" />
+                    End="-165.416666635622,31.824562294276" />
                   <mssgle:CubicBezierSegment
-                    Point1="-165.416666635622,26.2690067387204"
-                    Point2="-169.416666635622,26.2690067387204"
-                    Point3="-169.416666635622,30.2690067387204" />
+                    Point1="-165.416666635622,31.824562294276"
+                    Point2="-169.416666635622,31.824562294276"
+                    Point3="-169.416666635622,35.824562294276" />
                   <mssgle:LineSegment
-                    End="-169.416666635622,45.0380134774409" />
+                    End="-169.416666635622,56.149124588552" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-132.899720036561,31.2690067387204,96.3827734375,11.609375"
+              BoundingBox="-132.899720036561,36.824562294276,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="221.333333333334,42.6666666666667"
           Id="Package\Fact Table\Ship day month year numbers"
-          TopLeft="1.15079326939484,422.067254692362" />
+          TopLeft="6.15079326939484,422.622810247918" />
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output4]"
-          TopLeft="109.261904380506,374.289476914584">
+          TopLeft="106.70634882495,374.289476914584">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.7777777777779"
+              EndConnector="10.1111111111111,48.3333333333335"
               Start="0,0"
-              End="0,40.2777777777779">
+              End="10.1111111111111,40.8333333333335">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.2777777777779" />
+                    End="0,20.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1666666666667"
+                    Point2="0,24.1666666666667"
+                    Point3="4,24.1666666666667" />
+                  <mssgle:LineSegment
+                    End="6.11111111111111,24.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.11111111111111,24.1666666666667"
+                    Point2="10.1111111111111,24.1666666666667"
+                    Point3="10.1111111111111,28.1666666666667" />
+                  <mssgle:LineSegment
+                    End="10.1111111111111,40.8333333333335" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.3342013888889,96.3827734375,11.609375"
+              BoundingBox="-43.1358311631944,29.1666666666667,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15818,18 +16859,18 @@ FROM Sales.SalesOrderHeader</property>
           TopLeft="314.444444444444,430" />
         <EdgeLayout
           Id="Package\Fact Table.Paths[Derived Column Output]"
-          TopLeft="222.484126602728,447.366960679514">
+          TopLeft="227.484126602728,447.644738457292">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="91.9603178417162,0"
+              EndConnector="86.9603178417162,0"
               Start="0,0"
-              End="84.4603178417162,0">
+              End="79.4603178417162,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="84.4603178417162,0" />
+                    End="79.4603178417162,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15897,37 +16938,13 @@ FROM Sales.SalesOrderHeader</property>
         <NodeLayout
           Size="174.666666666667,42.6666666666667"
           Id="Package\Fact Table\OLE DB Destination"
-          TopLeft="266.666666666667,502.777777777778" />
-        <EdgeLayout
-          Id="Package\Fact Table.Paths[Lookup Match Output7]"
-          TopLeft="564.444444444444,526.611111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-123.111111111111,0"
-              Start="0,0"
-              End="-115.611111111111,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-115.611111111111,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-114.865594618056,5,114.120078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="133.333333333333,506.111111111111" />
         <NodeLayout
           Size="157.333333333334,42.6666666666667"
           Id="Package\Fact Table\Conditional Split"
           TopLeft="338.333333333333,226.666666666667" />
         <EdgeLayout
-          Id="Package\Fact Table.Paths[Lookup Match Output8]"
+          Id="Package\Fact Table.Paths[Lookup Match Output7]"
           TopLeft="258.761900717304,256.801174012284">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15984,6 +17001,56 @@ FROM Sales.SalesOrderHeader</property>
             <mssgm:EdgeLabel
               BoundingBox="3.35871125355513,5,56.4055859375,9.7490234375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Fact Table\Sort"
+          TopLeft="355.555555555556,506.666666666667" />
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Lookup Match Output8]"
+          TopLeft="564.444444444444,528.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-110.222222222222,0"
+              Start="0,0"
+              End="-102.722222222222,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-102.722222222222,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.5524978298611,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Sort Output]"
+          TopLeft="355.555555555556,527.722222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47.5555555555558,0"
+              Start="0,0"
+              End="-40.0555555555558,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-40.0555555555558,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
