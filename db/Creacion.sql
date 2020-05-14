@@ -59,10 +59,10 @@ CREATE TABLE DimOrderDate
 (
 	OrderDateKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[DayName] NVARCHAR(10) NOT NULL,
-	DayNumber TINYINT NOT NULL,
+	DayNumber INT NOT NULL,
 	[MonthName] NVARCHAR(10) NOT NULL,
-	[MonthNumber] TINYINT NOT NULL,
-	[YearNumber] SMALLINT NOT NULL,
+	[MonthNumber] INT NOT NULL,
+	[YearNumber] INT NOT NULL,
 
 	CONSTRAINT UQ_OrderDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
 );
@@ -71,10 +71,10 @@ CREATE TABLE DimDueDate
 (
 	DueDateKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[DayName] NVARCHAR(10) NOT NULL,
-	DayNumber TINYINT NOT NULL,
+	DayNumber INT NOT NULL,
 	[MonthName] NVARCHAR(10) NOT NULL,
-	[MonthNumber] TINYINT NOT NULL,
-	[YearNumber] SMALLINT NOT NULL,
+	[MonthNumber] INT NOT NULL,
+	[YearNumber] INT NOT NULL,
 
 	CONSTRAINT UQ_DimDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
 );
@@ -84,10 +84,10 @@ CREATE TABLE DimShipDate
 (
 	ShipDateKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[DayName] NVARCHAR(10) NOT NULL,
-	DayNumber TINYINT NOT NULL,
+	DayNumber INT NOT NULL,
 	[MonthName] NVARCHAR(10) NOT NULL,
-	MonthNumber TINYINT NOT NULL,
-	YearNumber SMALLINT NOT NULL,
+	MonthNumber INT NOT NULL,
+	YearNumber INT NOT NULL,
 
 	CONSTRAINT UQ_ShipDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
 );

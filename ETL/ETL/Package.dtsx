@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{D65A217F-6880-45A4-8046-E5B48B107C39}">
+  DTS:VersionBuild="91"
+  DTS:VersionGUID="{0A0FEBA0-0DFB-4A57-98EA-AAE77A8E50D8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA2x5hNPu2t0x7ahwEzpljySPRCrKe91ywroDhmvzrkMAAAAAAOgAAAAAIAACAAAADc9UM8kwotp8pSWO7Tu40og1U/a9fLMdg2BBxHkWAbYRAAAAAlG5oGpirK8l47RfICYpZMQAAAAHGzMTM0ugyA9XKW5ySHdavN304SbK45zQpsLiNUuMVnC5rF4HJabvOCM/1/V8RzJXBKZoE+pso7DCC89Fu7fLY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAABxnoL40c8NCsTtc13o0w+FCecj7qbTRRN/NpXlcOLbQAAAAAOgAAAAAIAACAAAADD6/H/HbJaUjQhq8o6Sgq4v/OTw/8X21TYibzn3y4dhhAAAADq+ZhMAc1s4fGDNveLZ84hQAAAAL96V4IHmJNxSw9SkvfyvC18to4QPQ8s4gD6g9F910eE9yszNT+V8VUurCsckwtA4ChsbbnP3Rp29VL2pX/EJHQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -52,7 +52,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADOb8r95dHvSFnQLN6Aa14jofz4vc3LQLvxpkIkOKFqOwAAAAAOgAAAAAIAACAAAADcwoFXCUkmUhxD+C54CGhDpcWjg/xlMTjm3BrIGSvcVhAAAABCWppG/2iW4Tu4NRIlbPCFQAAAAChyZsPFqsh9DmOY8M3NIq4fKKtnh3J1xtxHq5FIIuOYrZMw4jrCQ41s8M6Mn0DfQx450TAtYpBC63jjNRsawVo</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABNJqGjQVPkIP7Baghcaig/xPbWpSPKhNmZ4oFqnG+y9gAAAAAOgAAAAAIAACAAAACeMOYZWqznMuTgYEArEitromXOh3dI2wz0nuDf4QtPaRAAAABNJSOSlWhPphk/MZlGh8/mQAAAAHtAwsK4DjGRTIMmXPS4HwXdnwWXTXbkZIZm3Dvh36mDG/1Sk5QzFEiZTU2aJPwlaBKirjzJlCe3hMJGfV72uIc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2485,6 +2485,95 @@
           version="1">
           <components>
             <component
+              refId="Package\Fact Table\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fact Table\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Table\Conditional Split.Inputs[Conditional Split Input].Columns[StoreID]"
+                      cachedDataType="i4"
+                      cachedName="StoreID"
+                      lineageId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output].Columns[StoreID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Table\Conditional Split.Outputs[StoreNotNull]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="StoreNotNull"
+                  synchronousInputId="Package\Fact Table\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output].Columns[StoreID]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(StoreID)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Conditional Split.Outputs[Errores]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Errores"
+                  synchronousInputId="Package\Fact Table\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Fact Table\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact Table\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Fact Table\Lookup - Customer Location"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -2643,6 +2732,196 @@ where [refTable].[CustomerId] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Fact Table\Lookup - Due"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup - Due"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDueDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDueDate]) [refTable]
+where [refTable].[DayNumber] = ? and [refTable].[MonthNumber] = ? and [refTable].[YearNumber] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DueDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueDayNumber]};#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueMonthNumber]};#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueYearNumber]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact Table\Lookup - Due.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input].Columns[DueDayNumber]"
+                      cachedDataType="i4"
+                      cachedName="DueDayNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueDayNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DayNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input].Columns[DueMonthNumber]"
+                      cachedDataType="i4"
+                      cachedName="DueMonthNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueMonthNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MonthNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input].Columns[DueYearNumber]"
+                      cachedDataType="i4"
+                      cachedName="DueYearNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueYearNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">YearNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output].Columns[FTDueDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output].Columns[FTDueDateKey]"
+                      name="FTDueDateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DueDateKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Lookup - Due.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Lookup - Due.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Due.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Lookup - Due.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Due.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Lookup - Due.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Fact Table\Lookup - Employee"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -2699,7 +2978,7 @@ where [refTable].[BusinessEntityId] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output].Columns[EmployeeID]};</property>
+                  name="ParameterMap">#{Package\Fact Table\156:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2726,7 +3005,7 @@ where [refTable].[BusinessEntityId] = ?</property>
                       refId="Package\Fact Table\Lookup - Employee.Inputs[Lookup Input].Columns[EmployeeID]"
                       cachedDataType="i4"
                       cachedName="EmployeeID"
-                      lineageId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output].Columns[EmployeeID]">
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[EmployeeID]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -2793,6 +3072,196 @@ where [refTable].[BusinessEntityId] = ?</property>
                       refId="Package\Fact Table\Lookup - Employee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Fact Table\Lookup - Employee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fact Table\Lookup - Order"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup - Order"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimOrderDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimOrderDate]) [refTable]
+where [refTable].[DayNumber] = ? and [refTable].[MonthNumber] = ? and [refTable].[YearNumber] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="OrderDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderDayNumber]};#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderMonthNumber]};#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderYearNumber]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact Table\Lookup - Order.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact Table\Lookup - Order.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Order.Inputs[Lookup Input].Columns[OrderDayNumber]"
+                      cachedDataType="i4"
+                      cachedName="OrderDayNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderDayNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DayNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Order.Inputs[Lookup Input].Columns[OrderMonthNumber]"
+                      cachedDataType="i4"
+                      cachedName="OrderMonthNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderMonthNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MonthNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Order.Inputs[Lookup Input].Columns[OrderYearNumber]"
+                      cachedDataType="i4"
+                      cachedName="OrderYearNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderYearNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">YearNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Order.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output].Columns[FTOrderDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output].Columns[FTOrderDateKey]"
+                      name="FTOrderDateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">OrderDateKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Lookup - Order.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Order.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Lookup - Order.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Order.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Order.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Lookup - Order.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Order.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Lookup - Order.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2951,6 +3420,196 @@ where [refTable].[ProductId] = ?</property>
                       refId="Package\Fact Table\Lookup - Product.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Fact Table\Lookup - Product.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fact Table\Lookup - Ship"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup - Ship"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimShipDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimShipDate]) [refTable]
+where [refTable].[DayNumber] = ? and [refTable].[MonthNumber] = ? and [refTable].[YearNumber] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ShipDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipDayNumber]};#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipMonthNumber]};#{Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipYearNumber]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact Table\Lookup - Ship.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact Table\Lookup - Ship.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Ship.Inputs[Lookup Input].Columns[ShipDayNumber]"
+                      cachedDataType="i4"
+                      cachedName="ShipDayNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipDayNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DayNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Ship.Inputs[Lookup Input].Columns[ShipMonthNumber]"
+                      cachedDataType="i4"
+                      cachedName="ShipMonthNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipMonthNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MonthNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Lookup - Ship.Inputs[Lookup Input].Columns[ShipYearNumber]"
+                      cachedDataType="i4"
+                      cachedName="ShipYearNumber"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipYearNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">YearNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Ship.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output].Columns[FTShipDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output].Columns[FTShipDateKey]"
+                      name="FTShipDateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ShipDateKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Lookup - Ship.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Ship.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Fact Table\Lookup - Ship.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3295,6 +3954,20 @@ where [refTable].[SalesOrderID] = ?</property>
                           name="CopyFromReferenceColumn">TerritoryID</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[EmployeeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">SalesPersonID</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3453,20 +4126,6 @@ where [refTable].[CustomerID] = ?</property>
                           name="CopyFromReferenceColumn">StoreID</property>
                       </properties>
                     </outputColumn>
-                    <outputColumn
-                      refId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output].Columns[EmployeeID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output].Columns[EmployeeID]"
-                      name="EmployeeID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">PersonID</property>
-                      </properties>
-                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3495,6 +4154,199 @@ where [refTable].[CustomerID] = ?</property>
                       refId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fact Table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactTable]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact Table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  connectionManagerRefId="Package.ConnectionManagers[JOSE-ANDRES\SQLEXPRESS.Final_ETL.etl]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTCustomerKey]"
+                      cachedDataType="i4"
+                      cachedName="FTCustomerKey"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerLocationFKey]"
+                      lineageId="Package\Fact Table\Lookup - Customer Location.Outputs[Lookup Match Output].Columns[FTCustomerKey]" />
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTStoreKey]"
+                      cachedDataType="i4"
+                      cachedName="FTStoreKey"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreLocationFKey]"
+                      lineageId="Package\Fact Table\Lookup - Store Location.Outputs[Lookup Match Output].Columns[FTStoreKey]" />
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTProductKey]"
+                      cachedDataType="i4"
+                      cachedName="FTProductKey"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductFKey]"
+                      lineageId="Package\Fact Table\Lookup - Product.Outputs[Lookup Match Output].Columns[FTProductKey]" />
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTEmployeeKey]"
+                      cachedDataType="i4"
+                      cachedName="FTEmployeeKey"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeFKey]"
+                      lineageId="Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output].Columns[FTEmployeeKey]" />
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTDueDateKey]"
+                      cachedDataType="i4"
+                      cachedName="FTDueDateKey"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DueDateFKey]"
+                      lineageId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output].Columns[FTDueDateKey]" />
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTShipDateKey]"
+                      cachedDataType="i4"
+                      cachedName="FTShipDateKey"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipDateFKey]"
+                      lineageId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output].Columns[FTShipDateKey]" />
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTOrderDateKey]"
+                      cachedDataType="i4"
+                      cachedName="FTOrderDateKey"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDateFKey]"
+                      lineageId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output].Columns[FTOrderDateKey]" />
+                    <inputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderQty]"
+                      cachedDataType="i2"
+                      cachedName="OrderQty"
+                      externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output].Columns[OrderQty]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerLocationFKey]"
+                      dataType="i4"
+                      name="CustomerLocationFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreLocationFKey]"
+                      dataType="i4"
+                      name="StoreLocationFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductFKey]"
+                      dataType="i4"
+                      name="ProductFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeFKey]"
+                      dataType="i4"
+                      name="EmployeeFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DueDateFKey]"
+                      dataType="i4"
+                      name="DueDateFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipDateFKey]"
+                      dataType="i4"
+                      name="ShipDateFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDateFKey]"
+                      dataType="i4"
+                      name="OrderDateFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3693,8 +4545,279 @@ where [refTable].[CustomerID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Fact Table\Ship day month year numbers"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Ship day month year numbers"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fact Table\Ship day month year numbers.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Inputs[Derived Column Input].Columns[ShipDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ShipDate"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[ShipDate]" />
+                    <inputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Inputs[Derived Column Input].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Inputs[Derived Column Input].Columns[DueDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DueDate"
+                      lineageId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[DueDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Fact Table\Ship day month year numbers.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipDayNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipDayNumber]"
+                      name="ShipDayNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("day",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[ShipDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("day",ShipDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipMonthNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipMonthNumber]"
+                      name="ShipMonthNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("month",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[ShipDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("month",ShipDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipYearNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[ShipYearNumber]"
+                      name="ShipYearNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("year",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[ShipDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("year",ShipDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueDayNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueDayNumber]"
+                      name="DueDayNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("day",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[DueDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("day",DueDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueMonthNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueMonthNumber]"
+                      name="DueMonthNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("month",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[DueDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("month",DueDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueYearNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[DueYearNumber]"
+                      name="DueYearNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("year",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[DueDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("year",DueDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderDayNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderDayNumber]"
+                      name="OrderDayNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("day",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[OrderDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("day",OrderDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderMonthNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderMonthNumber]"
+                      name="OrderMonthNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("month",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[OrderDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("month",OrderDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderYearNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output].Columns[OrderYearNumber]"
+                      name="OrderYearNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DATEPART]("year",#{Package\Fact Table\Lookup AW.Outputs[Lookup Match Output].Columns[OrderDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DATEPART("year",OrderDate)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Fact Table\Ship day month year numbers.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
+            <path
+              refId="Package\Fact Table.Paths[Derived Column Output]"
+              endId="Package\Fact Table\Lookup - Ship.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Fact Table\Ship day month year numbers.Outputs[Derived Column Output]" />
             <path
               refId="Package\Fact Table.Paths[Lookup Match Output]"
               endId="Package\Fact Table\Lookup AW 2.Inputs[Lookup Input]"
@@ -3702,29 +4825,54 @@ where [refTable].[CustomerID] = ?</property>
               startId="Package\Fact Table\Lookup AW.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact Table.Paths[Lookup Match Output1]"
-              endId="Package\Fact Table\Lookup - Product.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fact Table.Paths[Lookup Match Output2]"
               endId="Package\Fact Table\Lookup - Store Location.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fact Table\Lookup - Product.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Fact Table.Paths[Lookup Match Output3]"
+              refId="Package\Fact Table.Paths[Lookup Match Output2]"
               endId="Package\Fact Table\Lookup - Employee.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fact Table\Lookup - Store Location.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Fact Table.Paths[Lookup Match Output4]"
+              refId="Package\Fact Table.Paths[Lookup Match Output3]"
               endId="Package\Fact Table\Lookup - Customer Location.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Table.Paths[Lookup Match Output4]"
+              endId="Package\Fact Table\Ship day month year numbers.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact Table\Lookup - Customer Location.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Table.Paths[Lookup Match Output5]"
+              endId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Table.Paths[Lookup Match Output6]"
+              endId="Package\Fact Table\Lookup - Order.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Table.Paths[Lookup Match Output7]"
+              endId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Table.Paths[Lookup Match Output8]"
+              endId="Package\Fact Table\Conditional Split.Inputs[Conditional Split Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact Table\Lookup AW 2.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact Table.Paths[OLE DB Source Output]"
               endId="Package\Fact Table\Lookup AW.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Fact Table\Sales Order Details Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fact Table.Paths[StoreNotNull]"
+              endId="Package\Fact Table\Lookup - Product.Inputs[Lookup Input]"
+              name="StoreNotNull"
+              startId="Package\Fact Table\Conditional Split.Outputs[StoreNotNull]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -14246,7 +15394,7 @@ FROM Sales.SalesOrderHeader</property>
     design-time-name="Package\Employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Employee\Sort Employee"
@@ -14294,9 +15442,7 @@ FROM Sales.SalesOrderHeader</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14330,9 +15476,7 @@ FROM Sales.SalesOrderHeader</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14366,9 +15510,7 @@ FROM Sales.SalesOrderHeader</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14390,9 +15532,7 @@ FROM Sales.SalesOrderHeader</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14414,9 +15554,7 @@ FROM Sales.SalesOrderHeader</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14438,9 +15576,7 @@ FROM Sales.SalesOrderHeader</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14489,49 +15625,49 @@ FROM Sales.SalesOrderHeader</property>
     design-time-name="Package\Fact Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42.6666666666667"
           Id="Package\Fact Table\Lookup AW 2"
-          TopLeft="271.428567383971,234.912285123395" />
+          TopLeft="114.761900717304,235.467840678951" />
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\Fact Table\Lookup - Employee"
-          TopLeft="265.178567477103,333.114038597129" />
+          TopLeft="291.289678588214,333.669594152685" />
         <NodeLayout
           Size="192,42.6666666666667"
           Id="Package\Fact Table\Lookup - Store Location"
-          TopLeft="484.970230868618,328.026320661865" />
+          TopLeft="546.636897535285,328.026320661865" />
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
+          Size="209.333333333334,42"
           Id="Package\Fact Table\Sales Order Details Source"
-          TopLeft="239.608131350195,49.3609031847357" />
+          TopLeft="254.608131350195,49.3609031847357" />
         <NodeLayout
           Size="213.333333333334,42.6666666666667"
           Id="Package\Fact Table\Lookup - Customer Location"
-          TopLeft="25.5952377138393,334.956143581251" />
+          TopLeft="0.0396821582837248,331.622810247918" />
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Fact Table\Lookup - Product"
-          TopLeft="498.511897333499,238.596494479908" />
+          TopLeft="566.289675111277,229.152050035464" />
         <NodeLayout
           Size="135.333333333334,42.6666666666667"
           Id="Package\Fact Table\Lookup AW"
-          TopLeft="273.51190068626,140.263160534843" />
+          TopLeft="288.51190068626,140.263160534843" />
         <EdgeLayout
           Id="Package\Fact Table.Paths[OLE DB Source Output]"
-          TopLeft="342.726682684894,92.0275698514023">
+          TopLeft="357.726682684894,91.3609031847357">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.2355906834406"
+              EndConnector="0,48.9022573501073"
               Start="0,0"
-              End="0,40.7355906834406">
+              End="0,41.4022573501073">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.7355906834406" />
+                    End="0,41.4022573501073" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14541,122 +15677,312 @@ FROM Sales.SalesOrderHeader</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact Table.Paths[Lookup Match Output4]"
-          TopLeft="265.178567477103,355.368424422523">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26.2499964299301,0"
-              Start="0,0"
-              End="-18.7499964299301,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-18.7499964299301,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-57.5663849337151,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output3]"
-          TopLeft="484.970230868618,351.90351296283">
+          TopLeft="291.289678588214,353.979535533634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-47.7916633915156,0"
+              EndConnector="-77.9166630965969,0"
               Start="0,0"
-              End="-40.2916633915156,0">
+              End="-70.4166630965969,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-40.2916633915156,0" />
+                    End="-70.4166630965969,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-68.3372184145078,5,96.3827734375,11.609375"
+              BoundingBox="-83.3997182670485,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output2]"
-          TopLeft="579.741064101058,281.263161146575">
+          TopLeft="546.636897535285,352.181290740608">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.7631595152898"
+              EndConnector="-83.3472189470708,0"
               Start="0,0"
-              End="0,39.2631595152898">
+              End="-75.8472189470708,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.2631595152898" />
+                    End="-75.8472189470708,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.8268922576449,96.3827734375,11.609375"
+              BoundingBox="-86.1149961922854,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output1]"
-          TopLeft="415.428567383971,258.087723134985">
+          TopLeft="644.463286323281,271.81871670213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="83.0833299495281,0"
+              EndConnector="0,56.2076039597348"
               Start="0,0"
-              End="75.5833299495281,0">
+              End="0,48.7076039597348">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="75.5833299495281,0" />
+                    End="0,48.7076039597348" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-10.399721743986,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,18.5491144798674,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output]"
-          TopLeft="342.303567368448,182.929827201509">
+          TopLeft="356.178567352927,182.92982720151">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.9824579218858"
+              EndConnector="-169.416666635622,52.5380134774409"
               Start="0,0"
-              End="0,44.4824579218858">
+              End="-169.416666635622,45.0380134774409">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.4824579218858" />
+                    End="0,22.2690067387204" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2690067387204"
+                    Point2="0,26.2690067387204"
+                    Point3="-4,26.2690067387204" />
+                  <mssgle:LineSegment
+                    End="-165.416666635622,26.2690067387204" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-165.416666635622,26.2690067387204"
+                    Point2="-169.416666635622,26.2690067387204"
+                    Point3="-169.416666635622,30.2690067387204" />
+                  <mssgle:LineSegment
+                    End="-169.416666635622,45.0380134774409" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.4365414609429,96.3827734375,11.609375"
+              BoundingBox="-132.899720036561,31.2690067387204,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\Fact Table\Ship day month year numbers"
+          TopLeft="1.15079326939484,422.067254692362" />
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Lookup Match Output4]"
+          TopLeft="109.261904380506,374.289476914584">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.7777777777779"
+              Start="0,0"
+              End="0,40.2777777777779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2777777777779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,14.3342013888889,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="145.333333333334,42.6666666666667"
+          Id="Package\Fact Table\Lookup - Ship"
+          TopLeft="314.444444444444,430" />
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Derived Column Output]"
+          TopLeft="222.484126602728,447.366960679514">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.9603178417162,0"
+              Start="0,0"
+              End="84.4603178417162,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.4603178417162,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package\Fact Table\Lookup - Due"
+          TopLeft="561.111111111111,427.222222222222" />
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Lookup Match Output5]"
+          TopLeft="459.777777777778,449.944444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.333333333333,0"
+              Start="0,0"
+              End="93.8333333333333,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.8333333333333,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-1.27472005208337,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Fact Table\Lookup - Order"
+          TopLeft="564.444444444444,507.777777777778" />
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Lookup Match Output6]"
+          TopLeft="636.444444444444,469.888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.888888888889"
+              Start="0,0"
+              End="0,30.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.388888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.38975694444451,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Fact Table\OLE DB Destination"
+          TopLeft="266.666666666667,502.777777777778" />
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Lookup Match Output7]"
+          TopLeft="564.444444444444,526.611111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-123.111111111111,0"
+              Start="0,0"
+              End="-115.611111111111,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-115.611111111111,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-114.865594618056,5,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Fact Table\Conditional Split"
+          TopLeft="338.333333333333,226.666666666667" />
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Lookup Match Output8]"
+          TopLeft="258.761900717304,256.801174012284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.5714326160289,-8.80117401228389"
+              Start="0,0"
+              End="72.0714326160289,-8.80117401228389">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.7857163080145,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.7857163080145,0"
+                    Point2="39.7857163080145,0"
+                    Point3="39.7857163080145,-4" />
+                  <mssgle:LineSegment
+                    End="39.7857163080145,-4.80117401228389" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.7857163080145,-4.80117401228389"
+                    Point2="39.7857163080145,-8.80117401228389"
+                    Point3="43.7857163080145,-8.80117401228389" />
+                  <mssgle:LineSegment
+                    End="72.0714326160289,-8.80117401228389" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8.40567041073555,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[StoreNotNull]"
+          TopLeft="495.666666666667,249.242691684398">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.6230084446103,0"
+              Start="0,0"
+              End="63.1230084446103,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.1230084446103,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.35871125355513,5,56.4055859375,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14669,7 +15995,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14679,7 +16005,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14692,7 +16018,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14702,7 +16028,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14715,7 +16041,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14725,7 +16051,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14751,7 +16077,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14797,7 +16123,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14807,7 +16133,7 @@ FROM Sales.SalesOrderHeader</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16350,6 +17676,88 @@ FROM Sales.SalesOrderHeader</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Ship-Order-Due Date\Due Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact Table\Lookup - Ship">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimShipDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact Table\Lookup - Due">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDueDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact Table\Lookup - Order">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimOrderDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact Table\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
