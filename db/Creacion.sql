@@ -63,6 +63,8 @@ CREATE TABLE DimOrderDate
 	[MonthName] NVARCHAR(10) NOT NULL,
 	[MonthNumber] TINYINT NOT NULL,
 	[YearNumber] SMALLINT NOT NULL,
+
+	CONSTRAINT UQ_OrderDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
 );
 
 CREATE TABLE DimDueDate
@@ -73,6 +75,8 @@ CREATE TABLE DimDueDate
 	[MonthName] NVARCHAR(10) NOT NULL,
 	[MonthNumber] TINYINT NOT NULL,
 	[YearNumber] SMALLINT NOT NULL,
+
+	CONSTRAINT UQ_DimDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
 );
 
 
@@ -84,6 +88,8 @@ CREATE TABLE DimShipDate
 	[MonthName] NVARCHAR(10) NOT NULL,
 	MonthNumber TINYINT NOT NULL,
 	YearNumber SMALLINT NOT NULL,
+
+	CONSTRAINT UQ_ShipDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
 );
 
 
