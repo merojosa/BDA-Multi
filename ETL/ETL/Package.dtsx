@@ -7,12 +7,12 @@
   DTS:CreatorName="JOSE-ANDRES\DELL"
   DTS:DTSID="{356BF553-1608-49B0-98F1-1B742A60C72B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="176"
-  DTS:VersionGUID="{E6995128-065F-4455-B59E-05A6B9978735}">
+  DTS:VersionBuild="182"
+  DTS:VersionGUID="{FA82D0FB-D557-4A57-98AA-5348FD81579D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,12 @@
       DTS:ObjectName="CI0141.AdventureWorks2017">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CI0141;Initial Catalog=AdventureWorks2017;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=JOSE-ANDRES\SQLEXPRESS;User ID=etl;Initial Catalog=AdventureWorks2017;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADaQBuD+5qAsTAHEc0Ut9cl378S2EZrlj5Zk1lF/dJ7NAAAAAAOgAAAAAIAACAAAACITzvKz3OXv74ygd0fYDTjppcJaa6re98vSTu5z5xcPxAAAADUBGO0fy1ce2MGDKPAIj1xQAAAACbP9NV7U+sfNRAPDIAywfuLHps7fwJknYKiXVoAfk4DPH8s174LMLL+cKkGdBYBunkx/K4/yBDBLrnJBGmsYYE</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -33,7 +38,12 @@
       DTS:ObjectName="CI0141.FinalETL1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CI0141;Initial Catalog=FinalETL1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=JOSE-ANDRES\SQLEXPRESS;User ID=etl;Initial Catalog=Final_ETL;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAdgpmDq69YaOfvibcW7I38tcrmYKAF89wJgfgS8cMVbQAAAAAOgAAAAAIAACAAAACw2pgCFGe7JiXxRyKWWyCRXuz9mw6LbWVXjXVD5Pm9kRAAAABWChgb1jEzQty4vKSAjJWiQAAAAOpr47edlXhIszSERNcp/nnjg70S8xufB2eUxrGlMxxoyFBM9gPqFu4vP2gstAsZqpq5Lnw9tUljBsZ9gyFx2ek</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -4432,70 +4442,67 @@ where [refTable].[CustomerID] = ?</property>
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTCustomerKey]"
                       cachedDataType="i4"
                       cachedName="FTCustomerKey"
-                      cachedSortKeyPosition="6"
+                      cachedSortKeyPosition="7"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerLocationFKey]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTCustomerKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTStoreKey]"
                       cachedDataType="i4"
                       cachedName="FTStoreKey"
-                      cachedSortKeyPosition="4"
+                      cachedSortKeyPosition="6"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreLocationFKey]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTStoreKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTProductKey]"
                       cachedDataType="i4"
                       cachedName="FTProductKey"
-                      cachedSortKeyPosition="3"
+                      cachedSortKeyPosition="5"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductFKey]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTProductKey]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTShipDateFK]"
                       cachedDataType="i4"
                       cachedName="FTShipDateFK"
-                      cachedSortKeyPosition="8"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipDateFKey]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTShipDateFK]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTOrderDateFK]"
                       cachedDataType="i4"
                       cachedName="FTOrderDateFK"
-                      cachedSortKeyPosition="9"
+                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDateFKey]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTOrderDateFK]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTDueDateFK]"
                       cachedDataType="i4"
                       cachedName="FTDueDateFK"
-                      cachedSortKeyPosition="7"
+                      cachedSortKeyPosition="3"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DueDateFKey]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTDueDateFK]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTUnitPrice]"
                       cachedDataType="cy"
                       cachedName="FTUnitPrice"
-                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTUnitPrice]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTOrderQty]"
                       cachedDataType="i2"
                       cachedName="FTOrderQty"
-                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTOrderQty]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTAmount]"
                       cachedDataType="cy"
                       cachedName="FTAmount"
-                      cachedSortKeyPosition="5"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalDue]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTAmount]" />
                     <inputColumn
                       refId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FTEmployeeKey]"
                       cachedDataType="i4"
                       cachedName="FTEmployeeKey"
-                      cachedSortKeyPosition="10"
+                      cachedSortKeyPosition="4"
                       externalMetadataColumnId="Package\Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeFKey]"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTEmployeeKey]" />
                   </inputColumns>
@@ -5037,7 +5044,7 @@ where [refTable].[CustomerID] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
+                  name="EliminateDuplicates">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the maximum number of threads to use for sorting."
@@ -5062,7 +5069,7 @@ where [refTable].[CustomerID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5078,7 +5085,7 @@ where [refTable].[CustomerID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5094,7 +5101,7 @@ where [refTable].[CustomerID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">5</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5110,7 +5117,7 @@ where [refTable].[CustomerID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">3</property>
+                          name="NewSortKeyPosition">5</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5118,6 +5125,22 @@ where [refTable].[CustomerID] = ?</property>
                       cachedDataType="i4"
                       cachedName="FTStoreKey"
                       lineageId="Package\Fact Table\Lookup - Store Location.Outputs[Lookup Match Output].Columns[FTStoreKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">6</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTEmployeeKey]"
+                      cachedDataType="i4"
+                      cachedName="FTEmployeeKey"
+                      lineageId="Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output].Columns[FTEmployeeKey]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5142,7 +5165,7 @@ where [refTable].[CustomerID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">6</property>
+                          name="NewSortKeyPosition">7</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5158,7 +5181,7 @@ where [refTable].[CustomerID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">8</property>
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5174,7 +5197,7 @@ where [refTable].[CustomerID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">7</property>
+                          name="NewSortKeyPosition">3</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5190,23 +5213,7 @@ where [refTable].[CustomerID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">9</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Fact Table\Sort.Inputs[Sort Input].Columns[FTEmployeeKey]"
-                      cachedDataType="i4"
-                      cachedName="FTEmployeeKey"
-                      lineageId="Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output].Columns[FTEmployeeKey]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">10</property>
+                          name="NewSortKeyPosition">2</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -5223,8 +5230,7 @@ where [refTable].[CustomerID] = ?</property>
                       refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTOrderQty]"
                       dataType="i2"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTOrderQty]"
-                      name="FTOrderQty"
-                      sortKeyPosition="1">
+                      name="FTOrderQty">
                       <properties>
                         <property
                           containsID="true"
@@ -5237,8 +5243,7 @@ where [refTable].[CustomerID] = ?</property>
                       refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTUnitPrice]"
                       dataType="cy"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTUnitPrice]"
-                      name="FTUnitPrice"
-                      sortKeyPosition="2">
+                      name="FTUnitPrice">
                       <properties>
                         <property
                           containsID="true"
@@ -5251,8 +5256,7 @@ where [refTable].[CustomerID] = ?</property>
                       refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTAmount]"
                       dataType="cy"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTAmount]"
-                      name="FTAmount"
-                      sortKeyPosition="5">
+                      name="FTAmount">
                       <properties>
                         <property
                           containsID="true"
@@ -5266,7 +5270,7 @@ where [refTable].[CustomerID] = ?</property>
                       dataType="i4"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTProductKey]"
                       name="FTProductKey"
-                      sortKeyPosition="3">
+                      sortKeyPosition="5">
                       <properties>
                         <property
                           containsID="true"
@@ -5280,7 +5284,7 @@ where [refTable].[CustomerID] = ?</property>
                       dataType="i4"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTStoreKey]"
                       name="FTStoreKey"
-                      sortKeyPosition="4">
+                      sortKeyPosition="6">
                       <properties>
                         <property
                           containsID="true"
@@ -5290,11 +5294,25 @@ where [refTable].[CustomerID] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
+                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTEmployeeKey]"
+                      dataType="i4"
+                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTEmployeeKey]"
+                      name="FTEmployeeKey"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output].Columns[FTEmployeeKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
                       refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTCustomerKey]"
                       dataType="i4"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTCustomerKey]"
                       name="FTCustomerKey"
-                      sortKeyPosition="6">
+                      sortKeyPosition="7">
                       <properties>
                         <property
                           containsID="true"
@@ -5308,7 +5326,7 @@ where [refTable].[CustomerID] = ?</property>
                       dataType="i4"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTShipDateFK]"
                       name="FTShipDateFK"
-                      sortKeyPosition="8">
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -5322,7 +5340,7 @@ where [refTable].[CustomerID] = ?</property>
                       dataType="i4"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTDueDateFK]"
                       name="FTDueDateFK"
-                      sortKeyPosition="7">
+                      sortKeyPosition="3">
                       <properties>
                         <property
                           containsID="true"
@@ -5336,27 +5354,13 @@ where [refTable].[CustomerID] = ?</property>
                       dataType="i4"
                       lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTOrderDateFK]"
                       name="FTOrderDateFK"
-                      sortKeyPosition="9">
+                      sortKeyPosition="2">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
                           name="SortColumnId">#{Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output].Columns[FTOrderDateFK]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTEmployeeKey]"
-                      dataType="i4"
-                      lineageId="Package\Fact Table\Sort.Outputs[Sort Output].Columns[FTEmployeeKey]"
-                      name="FTEmployeeKey"
-                      sortKeyPosition="10">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Fact Table\Lookup - Employee.Outputs[Lookup Match Output].Columns[FTEmployeeKey]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -5413,14 +5417,14 @@ where [refTable].[CustomerID] = ?</property>
               startId="Package\Fact Table\Lookup - Due.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact Table.Paths[Lookup Match Output8]"
-              endId="Package\Fact Table\Sort.Inputs[Sort Input]"
-              name="Lookup Match Output"
-              startId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fact Table.Paths[Lookup Match Output9]"
               endId="Package\Fact Table\Lookup - Due.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fact Table\Lookup - Ship.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Table.Paths[Lookup Match Output9]"
+              endId="Package\Fact Table\Sort.Inputs[Sort Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact Table\Lookup - Order.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact Table.Paths[OLE DB Source Output]"
               endId="Package\Fact Table\Lookup AW.Inputs[Lookup Input]"
@@ -7766,7 +7770,7 @@ where [refTable].[CustomerID] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{9390358B-2938-40F5-96B8-129ABA682B41}"
-          SQLTask:SqlStatementSource="INSERT INTO DimDate (DayName, MonthName, DayNumber, MonthNumber, YearNumber)&#xA;SELECT&#x9;DISTINCT&#x9;DATENAME(weekday, OrderDate), &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATENAME(month, OrderDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(day,OrderDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(month,OrderDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(year,OrderDate)&#xA;FROM AdventureWorks2017.Sales.SalesOrderHeader&#xA;INTERSECT&#xA;SELECT&#x9;DISTINCT&#x9;DATENAME(weekday, ShipDate), &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATENAME(month, ShipDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(day,ShipDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(month,ShipDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(year,ShipDate)&#xA;FROM AdventureWorks2017.Sales.SalesOrderHeader&#xA;INTERSECT&#xA;SELECT&#x9;DISTINCT&#x9;DATENAME(weekday, DueDate), &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATENAME(month, DueDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(day,DueDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(month,DueDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(year,DueDate)&#xA;&#xA;FROM AdventureWorks2017.Sales.SalesOrderHeader;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="INSERT INTO DimDate (DayName, MonthName, DayNumber, MonthNumber, YearNumber)&#xA;SELECT&#x9;DISTINCT&#x9;DATENAME(weekday, OrderDate), &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATENAME(month, OrderDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(day,OrderDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(month,OrderDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(year,OrderDate)&#xA;FROM AdventureWorks2017.Sales.SalesOrderHeader&#xA;UNION&#xA;SELECT&#x9;DISTINCT&#x9;DATENAME(weekday, ShipDate), &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATENAME(month, ShipDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(day,ShipDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(month,ShipDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(year,ShipDate)&#xA;FROM AdventureWorks2017.Sales.SalesOrderHeader&#xA;UNION&#xA;SELECT&#x9;DISTINCT&#x9;DATENAME(weekday, DueDate), &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATENAME(month, DueDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(day,DueDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(month,DueDate),&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;DATEPART(year,DueDate)&#xA;&#xA;FROM AdventureWorks2017.Sales.SalesOrderHeader;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -11400,11 +11404,11 @@ where [refTable].[CustomerID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,51"
+          Size="162.666666666667,50.6666666666667"
           Id="Package\Borrar Datos"
           TopLeft="526.27314113391,93.1228094186811" />
         <NodeLayout
-          Size="121,42"
+          Size="121.333333333334,42"
           Id="Package\Category"
           TopLeft="322.562826709112,234.270680875424" />
         <NodeLayout
@@ -11412,31 +11416,31 @@ where [refTable].[CustomerID] = ?</property>
           Id="Package\Customer Location"
           TopLeft="490.975522612268,314.415628081531" />
         <NodeLayout
-          Size="127,43"
+          Size="126.666666666667,42.6666666666667"
           Id="Package\Employee"
           TopLeft="772.285042229952,236.442777825247" />
         <NodeLayout
-          Size="129,43"
+          Size="129.333333333334,42.6666666666667"
           Id="Package\Fact Table"
           TopLeft="538.842585391055,511.321646825392" />
         <NodeLayout
-          Size="116,43"
+          Size="116,42.6666666666667"
           Id="Package\Product"
           TopLeft="328.604493285752,379.529664394859" />
         <NodeLayout
-          Size="142,43"
+          Size="142,42.6666666666667"
           Id="Package\Ship-Order-Due Dates"
           TopLeft="164.513886437441,233.157898686269" />
         <NodeLayout
-          Size="133,43"
+          Size="133.333333333334,42.6666666666667"
           Id="Package\Store Location"
           TopLeft="635.188483426289,315.275416457502" />
         <NodeLayout
-          Size="140,43"
+          Size="140,42.6666666666667"
           Id="Package\Subcategory"
           TopLeft="319.189810886358,305.732670524611" />
         <NodeLayout
-          Size="160,43"
+          Size="160,42.6666666666667"
           Id="Package\Territory Country"
           TopLeft="549.254291585115,237.431081937416" />
         <EdgeLayout
@@ -12378,64 +12382,60 @@ where [refTable].[CustomerID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="213,43"
+          Size="213.333333333334,42.6666666666667"
           Id="Package\Fact Table\Lookup - Customer Location"
-          TopLeft="2.46392458252616,331.622810247918" />
+          TopLeft="0.797257940694763,322.50000305866" />
         <NodeLayout
-          Size="98,42"
-          Id="Package\Fact Table\Sort"
-          TopLeft="556.666666666667,506.666666666667" />
-        <NodeLayout
-          Size="209,43"
+          Size="209.333333333334,42.6666666666667"
           Id="Package\Fact Table\Sales Order Details Source"
-          TopLeft="257.032373774437,52.0275698514023" />
+          TopLeft="258.699040416268,52.0275698514023" />
         <NodeLayout
           Size="142,42"
           Id="Package\Fact Table\Lookup - Due"
-          TopLeft="746.666666666667,428.888888888889" />
+          TopLeft="748.333333308498,428.888888888889" />
         <NodeLayout
-          Size="192,43"
+          Size="192,42.6666666666667"
           Id="Package\Fact Table\Lookup - Store Location"
-          TopLeft="549.061139959528,328.026320661865" />
+          TopLeft="554.061139885022,325.289478505088" />
         <NodeLayout
-          Size="172,43"
+          Size="172,42.6666666666667"
           Id="Package\Fact Table\Lookup - Employee"
-          TopLeft="293.713921012456,333.669594152685" />
+          TopLeft="301.213920900697,324.546786963427" />
         <NodeLayout
-          Size="135,43"
+          Size="134.666666666667,42.6666666666667"
           Id="Package\Fact Table\Lookup AW"
-          TopLeft="290.936143110502,129.152049423732" />
+          TopLeft="292.602809752333,129.152049423732" />
         <NodeLayout
           Size="146,42"
           Id="Package\Fact Table\Lookup - Date"
-          TopLeft="40.2020202020204,427.777777777778" />
+          TopLeft="41.8686868438518,427.777777777778" />
         <NodeLayout
-          Size="144,43"
+          Size="144,42.6666666666667"
           Id="Package\Fact Table\Lookup AW 2"
-          TopLeft="117.186143141546,235.467840678951" />
+          TopLeft="118.852809783377,235.467840678951" />
         <NodeLayout
           Size="150,42"
           Id="Package\Fact Table\Lookup - Order"
-          TopLeft="746.666666666667,510" />
+          TopLeft="748.333333308498,510" />
         <NodeLayout
-          Size="221,42"
+          Size="221.333333333334,42.6666666666667"
           Id="Package\Fact Table\Ship day month year numbers"
-          TopLeft="243.423520542122,428.986446611554" />
+          TopLeft="245.090187183953,428.986446611554" />
         <NodeLayout
-          Size="160,43"
+          Size="160,42.6666666666667"
           Id="Package\Fact Table\Lookup - Product"
-          TopLeft="568.71391753552,229.152050035464" />
+          TopLeft="570.380584177351,229.152050035464" />
         <NodeLayout
-          Size="171,42"
+          Size="174.666666666667,42.6666666666667"
           Id="Package\Fact Table\OLE DB Destination"
-          TopLeft="270,504.444444444444" />
+          TopLeft="329.999999105931,510.381509440628" />
         <NodeLayout
-          Size="157,43"
+          Size="157.333333333334,42.6666666666667"
           Id="Package\Fact Table\Conditional Split"
-          TopLeft="341.363636363636,235.151515151515" />
+          TopLeft="343.030303005467,235.151515151515" />
         <EdgeLayout
           Id="Package\Fact Table.Paths[StoreNotNull]"
-          TopLeft="498.696969696969,253.485115926823">
+          TopLeft="500.3636363388,253.485115926823">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12458,30 +12458,8 @@ where [refTable].[CustomerID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact Table.Paths[Sort Output]"
-          TopLeft="556.666666666667,526.555555555555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-115.666666666667,0"
-              Start="0,0"
-              End="-108.166666666667,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-108.166666666667,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Fact Table.Paths[OLE DB Source Output]"
-          TopLeft="360.150925109137,94.694236518069">
+          TopLeft="361.817591750968,94.694236518069">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12502,32 +12480,8 @@ where [refTable].[CustomerID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact Table.Paths[Lookup Match Output8]"
-          TopLeft="746.666666666667,529.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-92,0"
-              Start="0,0"
-              End="-84.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-84.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-90.44138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output7]"
-          TopLeft="819.666666666667,470.888888888889">
+          TopLeft="821.333333308498,470.888888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12551,55 +12505,55 @@ where [refTable].[CustomerID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output6]"
-          TopLeft="111.082972392273,374.622810247918">
+          TopLeft="111.166305725607,365.166669725327">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.1549675298598"
+              EndConnector="0,62.6111080524514"
               Start="0,0"
-              End="0,45.6549675298598">
+              End="0,55.1111080524514">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.6549675298598" />
+                    End="0,55.1111080524514" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.0227962649299,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,21.7508665262257,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output5]"
-          TopLeft="186.20202020202,449.382112194666">
+          TopLeft="187.868686843852,449.548778861333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.2215003401018,0"
+              EndConnector="57.2215003401016,0"
               Start="0,0"
-              End="49.7215003401018,0">
+              End="49.7215003401016,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="49.7215003401018,0" />
+                    End="49.7215003401016,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-23.3306365486991,5,96.3827734375,11.609375"
+              BoundingBox="-23.3306365486992,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output4]"
-          TopLeft="261.186143141546,256.643011248567">
+          TopLeft="262.852809783377,256.643011248567">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12623,79 +12577,79 @@ where [refTable].[CustomerID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output3]"
-          TopLeft="293.713921012456,353.979535533634">
+          TopLeft="301.213920900697,344.856728344377">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-77.9166630965969,0"
+              EndConnector="-87.0833296266692,0"
               Start="0,0"
-              End="-70.4166630965969,0">
+              End="-79.5833296266692,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-70.4166630965969,0" />
+                    End="-79.5833296266692,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-83.3997182670485,5,96.3827734375,11.609375"
+              BoundingBox="-87.9830515320846,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output2]"
-          TopLeft="549.061139959528,352.181290740608">
+          TopLeft="554.061139885022,346.251466067591">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-83.3472189470708,0"
+              EndConnector="-80.8472189843249,0"
               Start="0,0"
-              End="-75.8472189470708,0">
+              End="-73.3472189843249,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-75.8472189470708,0" />
+                    End="-73.3472189843249,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-86.1149961922854,5,96.3827734375,11.609375"
+              BoundingBox="-84.8649962109124,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output1]"
-          TopLeft="646.887528747523,271.81871670213">
+          TopLeft="650.220862031187,271.818716702131">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.2076039597348"
+              EndConnector="0,53.4707618029569"
               Start="0,0"
-              End="0,48.7076039597348">
+              End="0,45.9707618029569">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.7076039597348" />
+                    End="0,45.9707618029569" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,18.5491144798674,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,17.1806934014785,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Table.Paths[Lookup Match Output]"
-          TopLeft="358.602809777169,171.818716090399">
+          TopLeft="360.269476419,171.818716090399">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12730,55 +12684,103 @@ where [refTable].[CustomerID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="144,42"
+          Size="145.333333333334,42.6666666666667"
           Id="Package\Fact Table\Lookup - Ship"
-          TopLeft="545,428" />
+          TopLeft="518.472214496384,432.479536267712" />
         <EdgeLayout
           Id="Package\Fact Table.Paths[Derived Column Output]"
-          TopLeft="464.423520542122,449.493223305777">
+          TopLeft="466.423520517287,452.066324772967">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="80.576479457878,0"
+              EndConnector="52.0486939790976,0"
               Start="0,0"
-              End="73.076479457878,0">
+              End="44.5486939790976,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="73.076479457878,0" />
+                    End="44.5486939790976,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Lookup Match Output8]"
+          TopLeft="663.805547829718,451.850879244967">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.5277854787806,0"
+              Start="0,0"
+              End="77.0277854787806,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.0277854787806,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.538239728939,5,16,16"
+              BoundingBox="-9.67749397935969,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Fact Table\Sort"
+          TopLeft="555.833329587347,513.95711818646" />
+        <EdgeLayout
+          Id="Package\Fact Table.Paths[Lookup Match Output9]"
+          TopLeft="748.333333308498,533.145225759896">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-93.8333370544849,0"
+              Start="0,0"
+              End="-86.3333370544849,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-86.3333370544849,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.3580552459925,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact Table.Paths[Lookup Match Output9]"
-          TopLeft="689,449.444444444445">
+          Id="Package\Fact Table.Paths[Sort Output]"
+          TopLeft="555.833329587347,533.502647146877">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.666666666667,0"
+              EndConnector="-51.1666638147497,0"
               Start="0,0"
-              End="50.166666666667,0">
+              End="-43.6666638147497,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="50.166666666667,0" />
+                    End="-43.6666638147497,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.1080533854165,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12918,7 +12920,7 @@ where [refTable].[CustomerID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -12928,7 +12930,7 @@ where [refTable].[CustomerID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
