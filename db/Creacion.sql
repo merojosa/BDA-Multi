@@ -4,11 +4,9 @@ DROP TABLE IF EXISTS DimEmployee;
 DROP TABLE IF EXISTS DimStoreLocation;
 DROP TABLE IF EXISTS DimCustomerLocation;
 DROP TABLE IF EXISTS DimTerritoryCountry;
-DROP TABLE IF EXISTS DimOrderDate;
+DROP TABLE IF EXISTS DimDate;
 DROP TABLE IF EXISTS DimSubCategory;
 DROP TABLE IF EXISTS DimCategory;
-DROP TABLE IF EXISTS DimDueDate;
-DROP TABLE IF EXISTS DimShipDate;
 
 CREATE TABLE DimEmployee
 (
@@ -55,43 +53,17 @@ CREATE TABLE DimCustomerLocation
 );
 
 
-CREATE TABLE DimOrderDate
+CREATE TABLE DimDate
 (
-	OrderDateKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	DateKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[DayName] NVARCHAR(10) NOT NULL,
 	DayNumber INT NOT NULL,
 	[MonthName] NVARCHAR(10) NOT NULL,
 	[MonthNumber] INT NOT NULL,
 	[YearNumber] INT NOT NULL,
 
-	CONSTRAINT UQ_OrderDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
+	CONSTRAINT UQ_DimDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
 );
-
-CREATE TABLE DimDueDate
-(
-	DueDateKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[DayName] NVARCHAR(10) NOT NULL,
-	DayNumber INT NOT NULL,
-	[MonthName] NVARCHAR(10) NOT NULL,
-	[MonthNumber] INT NOT NULL,
-	[YearNumber] INT NOT NULL,
-
-	CONSTRAINT UQ_DimDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
-);
-
-
-CREATE TABLE DimShipDate
-(
-	ShipDateKey INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[DayName] NVARCHAR(10) NOT NULL,
-	DayNumber INT NOT NULL,
-	[MonthName] NVARCHAR(10) NOT NULL,
-	MonthNumber INT NOT NULL,
-	YearNumber INT NOT NULL,
-
-	CONSTRAINT UQ_ShipDueDate UNIQUE (DayNumber, [MonthNumber], [YearNumber])
-);
-
 
 CREATE TABLE DimCategory(
     CategoryDimKey INT IDENTITY(1,1) PRIMARY KEY,
@@ -133,14 +105,15 @@ CREATE TABLE FactTable(
 	StoreLocationFKey INT NOT NULL,
 	ProductFKey INT NOT NULL,
 	EmployeeFKey INT NOT NULL,
-	DueDateFKey INT NOT NULL,
 	ShipDateFKey INT NOT NULL,
 	OrderDateFKey INT NOT NULL,
+	DueDateFKey INT NOT NULL,
 	UnitPrice MONEY NOT NULL,
 	Quantity INT NOT NULL,
+	TotalDue MONEY NOT NULL,
 
 	CONSTRAINT PK_FactTable PRIMARY KEY(CustomerLocationFKey, StoreLocationFKey, ProductFKey,
-				EmployeeFKey, DueDateFKey, ShipDateFKey, OrderDateFKey),
+				EmployeeFKey, ShipDateFKey, OrderDateFKey, DueDateFKey),
 
 	CONSTRAINT FK_FTCustomer FOREIGN KEY (CustomerLocationFKey)
 	REFERENCES DimCustomerLocation(CustomerKey),
@@ -154,12 +127,10 @@ CREATE TABLE FactTable(
 	CONSTRAINT FK_FTEmployee FOREIGN KEY (EmployeeFKey)
 	REFERENCES DimEmployee(EmployeeKey),
 
-	CONSTRAINT FK_FTDueDate FOREIGN KEY (DueDateFKey)
-	REFERENCES DimDueDate(DueDateKey),
-
 	CONSTRAINT FK_FTShipDate FOREIGN KEY (ShipDateFKey)
-	REFERENCES DimShipDate(ShipDateKey),
-
+	REFERENCES DimDate(DateKey),
 	CONSTRAINT FK_FTOrderDate FOREIGN KEY (OrderDateFKey)
-	REFERENCES DimOrderDate(OrderDateKey)
+	REFERENCES DimDate(DateKey),
+	CONSTRAINT FK_FTDueDate FOREIGN KEY (DueDateFKey)
+	REFERENCES DimDate(DateKey),
 );
