@@ -138,6 +138,7 @@ CREATE TABLE FactTable(
 	OrderDateFKey INT NOT NULL,
 	UnitPrice MONEY NOT NULL,
 	Quantity INT NOT NULL,
+	TotalDue MONEY NOT NULL,
 
 	CONSTRAINT PK_FactTable PRIMARY KEY(CustomerLocationFKey, StoreLocationFKey, ProductFKey,
 				EmployeeFKey, DueDateFKey, ShipDateFKey, OrderDateFKey),
