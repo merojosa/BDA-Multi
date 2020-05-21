@@ -7,12 +7,12 @@
   DTS:CreatorName="JOSE-ANDRES\DELL"
   DTS:DTSID="{356BF553-1608-49B0-98F1-1B742A60C72B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="182"
-  DTS:VersionGUID="{FA82D0FB-D557-4A57-98AA-5348FD81579D}">
+  DTS:VersionBuild="183"
+  DTS:VersionGUID="{CFAEF4D1-2EFB-42F1-8AC9-176B17EF8F98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,12 +23,7 @@
       DTS:ObjectName="CI0141.AdventureWorks2017">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=JOSE-ANDRES\SQLEXPRESS;User ID=etl;Initial Catalog=AdventureWorks2017;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADaQBuD+5qAsTAHEc0Ut9cl378S2EZrlj5Zk1lF/dJ7NAAAAAAOgAAAAAIAACAAAACITzvKz3OXv74ygd0fYDTjppcJaa6re98vSTu5z5xcPxAAAADUBGO0fy1ce2MGDKPAIj1xQAAAACbP9NV7U+sfNRAPDIAywfuLHps7fwJknYKiXVoAfk4DPH8s174LMLL+cKkGdBYBunkx/K4/yBDBLrnJBGmsYYE</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=CI0141;Initial Catalog=AdventureWorks2017;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -38,12 +33,7 @@
       DTS:ObjectName="CI0141.FinalETL1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=JOSE-ANDRES\SQLEXPRESS;User ID=etl;Initial Catalog=Final_ETL;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAclPuOMrr/UelfZiaMq5TAQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAdgpmDq69YaOfvibcW7I38tcrmYKAF89wJgfgS8cMVbQAAAAAOgAAAAAIAACAAAACw2pgCFGe7JiXxRyKWWyCRXuz9mw6LbWVXjXVD5Pm9kRAAAABWChgb1jEzQty4vKSAjJWiQAAAAOpr47edlXhIszSERNcp/nnjg70S8xufB2eUxrGlMxxoyFBM9gPqFu4vP2gstAsZqpq5Lnw9tUljBsZ9gyFx2ek</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=CI0141;Initial Catalog=FinalETL1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -11404,11 +11394,11 @@ where [refTable].[CustomerID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162.666666666667,50.6666666666667"
+          Size="163,51"
           Id="Package\Borrar Datos"
           TopLeft="526.27314113391,93.1228094186811" />
         <NodeLayout
-          Size="121.333333333334,42"
+          Size="121,42"
           Id="Package\Category"
           TopLeft="322.562826709112,234.270680875424" />
         <NodeLayout
@@ -11416,31 +11406,31 @@ where [refTable].[CustomerID] = ?</property>
           Id="Package\Customer Location"
           TopLeft="490.975522612268,314.415628081531" />
         <NodeLayout
-          Size="126.666666666667,42.6666666666667"
+          Size="127,43"
           Id="Package\Employee"
           TopLeft="772.285042229952,236.442777825247" />
         <NodeLayout
-          Size="129.333333333334,42.6666666666667"
+          Size="129,43"
           Id="Package\Fact Table"
           TopLeft="538.842585391055,511.321646825392" />
         <NodeLayout
-          Size="116,42.6666666666667"
+          Size="116,43"
           Id="Package\Product"
           TopLeft="328.604493285752,379.529664394859" />
         <NodeLayout
-          Size="142,42.6666666666667"
+          Size="142,43"
           Id="Package\Ship-Order-Due Dates"
           TopLeft="164.513886437441,233.157898686269" />
         <NodeLayout
-          Size="133.333333333334,42.6666666666667"
+          Size="133,43"
           Id="Package\Store Location"
           TopLeft="635.188483426289,315.275416457502" />
         <NodeLayout
-          Size="140,42.6666666666667"
+          Size="140,43"
           Id="Package\Subcategory"
           TopLeft="319.189810886358,305.732670524611" />
         <NodeLayout
-          Size="160,42.6666666666667"
+          Size="160,43"
           Id="Package\Territory Country"
           TopLeft="549.254291585115,237.431081937416" />
         <EdgeLayout
@@ -12819,6 +12809,29 @@ where [refTable].[CustomerID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact Table\Lookup - Ship">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -14287,29 +14300,6 @@ where [refTable].[CustomerID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact Table\Lookup - Ship">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
