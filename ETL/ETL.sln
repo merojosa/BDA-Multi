@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ETL", "ETL\ETL.dtproj", "{F9D187C4-62A7-470E-BBDE-2154E89C5268}"
+EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "TC3_OLAPGr5", "TC3_OLAPGr5\TC3_OLAPGr5.dwproj", "{E8DBD4B5-7CC6-4B82-BB4A-F4C69A8D84B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,6 +14,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F9D187C4-62A7-470E-BBDE-2154E89C5268}.Development|Default.ActiveCfg = Development
 		{F9D187C4-62A7-470E-BBDE-2154E89C5268}.Development|Default.Build.0 = Development
+		{E8DBD4B5-7CC6-4B82-BB4A-F4C69A8D84B3}.Development|Default.ActiveCfg = Development
+		{E8DBD4B5-7CC6-4B82-BB4A-F4C69A8D84B3}.Development|Default.Build.0 = Development
+		{E8DBD4B5-7CC6-4B82-BB4A-F4C69A8D84B3}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
