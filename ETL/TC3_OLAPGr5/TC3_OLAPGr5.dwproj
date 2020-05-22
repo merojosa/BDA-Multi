@@ -8,16 +8,6 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>Final ETL1.cube</Name>
-      <FullPath>Final ETL1.cube</FullPath>
-      <Dependencies>
-        <ProjectItem>
-          <Name>Final ETL1.partitions</Name>
-          <FullPath>Final ETL1.partitions</FullPath>
-        </ProjectItem>
-      </Dependencies>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Final ETL1 1.cube</Name>
       <FullPath>Final ETL1 1.cube</FullPath>
       <Dependencies>
