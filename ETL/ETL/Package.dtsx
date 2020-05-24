@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="183"
-  DTS:VersionGUID="{CFAEF4D1-2EFB-42F1-8AC9-176B17EF8F98}">
+  DTS:VersionBuild="185"
+  DTS:VersionGUID="{87F160B7-D624-4E81-84E0-BCFD3F38A865}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -11394,11 +11394,11 @@ where [refTable].[CustomerID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,51"
+          Size="162.666666666667,50.6666666666667"
           Id="Package\Borrar Datos"
           TopLeft="526.27314113391,93.1228094186811" />
         <NodeLayout
-          Size="121,42"
+          Size="121.333333333334,42"
           Id="Package\Category"
           TopLeft="322.562826709112,234.270680875424" />
         <NodeLayout
@@ -11406,31 +11406,31 @@ where [refTable].[CustomerID] = ?</property>
           Id="Package\Customer Location"
           TopLeft="490.975522612268,314.415628081531" />
         <NodeLayout
-          Size="127,43"
+          Size="126.666666666667,42.6666666666667"
           Id="Package\Employee"
           TopLeft="772.285042229952,236.442777825247" />
         <NodeLayout
-          Size="129,43"
+          Size="129.333333333334,42.6666666666667"
           Id="Package\Fact Table"
           TopLeft="538.842585391055,511.321646825392" />
         <NodeLayout
-          Size="116,43"
+          Size="116,42.6666666666667"
           Id="Package\Product"
           TopLeft="328.604493285752,379.529664394859" />
         <NodeLayout
-          Size="142,43"
+          Size="142,42.6666666666667"
           Id="Package\Ship-Order-Due Dates"
           TopLeft="164.513886437441,233.157898686269" />
         <NodeLayout
-          Size="133,43"
+          Size="133.333333333334,42.6666666666667"
           Id="Package\Store Location"
           TopLeft="635.188483426289,315.275416457502" />
         <NodeLayout
-          Size="140,43"
+          Size="140,42.6666666666667"
           Id="Package\Subcategory"
           TopLeft="319.189810886358,305.732670524611" />
         <NodeLayout
-          Size="160,43"
+          Size="160,42.6666666666667"
           Id="Package\Territory Country"
           TopLeft="549.254291585115,237.431081937416" />
         <EdgeLayout
